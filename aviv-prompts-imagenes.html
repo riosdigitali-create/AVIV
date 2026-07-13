@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviv · Prompts de imágenes (Nano Banana)</title>
+<meta name="description" content="Prompts listos para Nano Banana (Gemini) con el estilo visual de Aviv — para usarlos en el sitio web y el CRM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kdisp:'Bricolage Grotesque',system-ui,sans-serif;
+  --ktext:'Inter',system-ui,-apple-system,sans-serif;
+  --ink:#0B1437; --muted:#7C88A8; --line:rgba(11,20,55,.09);
+  --paper:#F7F5F0; --cream:#FFFDF8;
+  --blue:#3B6EF6; --teal:#2FE0C6; --lilac:#5A34D6;
+  --soft-blue:#E4ECFF; --soft-teal:#DFF7F1; --soft-lilac:#EAE6FF; --soft-sand:#F1EFE7;
+  --r-xl:34px; --r-lg:26px; --r-md:18px; --r-pill:999px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ktext);background:var(--paper);color:var(--ink);line-height:1.55;letter-spacing:-.011em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--kdisp);font-weight:800;letter-spacing:-.04em;line-height:1}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+
+/* HERO */
+.hero{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:46px 40px 40px}
+.hero .kick{display:inline-block;background:rgba(255,255,255,.14);border-radius:var(--r-pill);padding:8px 15px;font-family:var(--kdisp);font-weight:700;font-size:12.5px;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5.6vw,60px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{color:#C7D0E6;max-width:62ch;font-size:16.5px}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.steps span{background:rgba(255,255,255,.08);border-radius:var(--r-pill);padding:9px 15px;font-size:13px;font-weight:600;color:#E7ECF8}
+
+/* DNA */
+.dna{background:var(--soft-lilac);border-radius:var(--r-xl);padding:28px 30px;margin-top:16px}
+.dna h2{font-size:24px;margin-bottom:8px}
+.dna p{font-size:14.5px;color:#3A4468;max-width:70ch}
+.dna .why{font-size:13px;color:#5A5F7A;margin-top:10px}
+
+/* SECCIONES */
+h2.sh{font-size:30px;margin:44px 0 6px}
+p.shd{color:var(--muted);font-weight:600;font-size:14.5px;margin-bottom:18px}
+
+/* CARDS */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.pc{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 22px 18px;display:flex;flex-direction:column}
+.pc:nth-child(4n+1){background:var(--soft-blue);border-color:transparent}
+.pc:nth-child(4n+2){background:var(--soft-teal);border-color:transparent}
+.pc:nth-child(4n+3){background:var(--soft-sand);border-color:transparent}
+.pc h3{font-size:20px;margin-bottom:4px}
+.pc .where{font-size:12.5px;color:#5A5F7A;font-weight:600;margin-bottom:12px}
+.meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.meta span{background:rgba(11,20,55,.07);border-radius:var(--r-pill);padding:4px 11px;font-family:var(--kdisp);font-weight:700;font-size:11.5px}
+.meta span.file{background:var(--ink);color:#fff}
+.pr{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:14px 15px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.4px;line-height:1.6;color:#28304D;white-space:pre-wrap;flex:1}
+.btn{margin-top:12px;align-self:flex-start;border:none;background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:11px 20px;font-family:var(--kdisp);font-weight:700;font-size:13.5px;cursor:pointer;transition:transform .16s cubic-bezier(.2,.9,.3,1.3),background .2s}
+.btn:hover{transform:translateY(-2px) scale(1.02)}
+.btn.ok{background:#0B7A55}
+.btn.ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+
+/* TIPS */
+.tips{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-xl);padding:28px 30px;margin-top:40px}
+.tips h2{font-size:26px;margin-bottom:14px}
+.tip{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.tip:last-child{border:none}
+.tip b{font-family:var(--kdisp);display:block;margin-bottom:2px}
+.tip .e{font-size:20px;flex:none}
+.tip p{color:#4A5170;font-size:13.5px}
+code{background:rgba(11,20,55,.06);border-radius:6px;padding:1px 6px;font-size:12.5px}
+.foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:34px}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:13px 24px;font-weight:700;font-size:14px;opacity:0;transition:.3s;pointer-events:none;z-index:9}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ═══ MÓVIL ═══ */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,canvas{max-width:100%}
+@media(max-width:760px){
+  .wrap,.inner{padding-left:18px!important;padding-right:18px!important}
+  h1{font-size:clamp(30px,8.6vw,42px)!important;line-height:1.02!important}
+  h2{font-size:clamp(24px,7vw,34px)!important}
+  
+  .grid,.g2,.g3,.g4,.cols,.cols2,.two,.split,.fgrid,.fgridf,.tgrid,.invgrid,.scn,.hgrid,.aigrid{grid-template-columns:1fr!important;display:grid!important}
+  table{display:block;overflow-x:auto;white-space:nowrap}
+  .card,.panel,.sec,.hero{padding:26px 20px!important;border-radius:26px!important}
+  nav,aside,.toc{max-width:100%}
+}
+
+/* ═══ Tipografía final: Bricolage SOLO en titulares y logo. Todo lo demás, Inter ═══ */
+body,p,span,small,b,strong,em,i,div,a,button,input,select,textarea,label,li,td,th,figcaption{font-family:var(--ktext)!important}
+h1,h2,h3,h4,h5,
+.nlogo b,.wbrand b,.invlogo b,.brand b,.brand .name,#gate h2{font-family:var(--kdisp)!important}
+
+/* ═══ Composición del texto: sin partir palabras ni dejar líneas huérfanas ═══ */
+html{-webkit-hyphens:none;hyphens:none}
+h1,h2,h3,h4,h5{
+  text-wrap:balance;              /* reparte el titular en líneas parejas, sin dejar una palabra sola */
+  overflow-wrap:break-word;       /* solo parte si una palabra no cabe de ninguna forma */
+  word-break:normal;
+  -webkit-hyphens:none;hyphens:none;
+}
+p,li,.lead,.lead2,.hp,.tlead,.invlead,.sub,.desc,.hint,.note,.disc,td,th,figcaption,blockquote{
+  text-wrap:pretty;               /* evita que la última línea quede con una sola palabra */
+  overflow-wrap:break-word;
+  word-break:normal;
+  -webkit-hyphens:none;hyphens:none;
+  orphans:2;widows:2;
+}
+/* botones, chips y etiquetas: nunca se parten a media frase */
+.btn,button,.kick,.hkick,.tkick,.invkick,.chip,.pill,.tag,.term,.storebtn,.ncta,.simbtn,.invbtn,.wbtn,.cost,.pri,.mvtag,.meta span{
+  overflow-wrap:normal;word-break:keep-all;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="kick">🍌 Nano Banana · Gemini</span>
+    <h1>Imágenes para Aviv,<br><em>listas para copiar y pegar.</em></h1>
+    <p>Cada tarjeta es un prompt terminado: dice qué imagen es, dónde va en el sitio, en qué proporción exportarla y con qué nombre guardarla. Copia, pega en Nano Banana, descarga y suéltala en la carpeta del proyecto.</p>
+    <div class="steps">
+      <span>1 · Copia el ADN de marca</span>
+      <span>2 · Copia el prompt</span>
+      <span>3 · Pégalos juntos</span>
+      <span>4 · Guarda con el nombre indicado</span>
+    </div>
+  </header>
+
+  <div class="dna">
+    <h2>Primero: el ADN de marca</h2>
+    <p>Pega este bloque <b>antes</b> de cualquier prompt de abajo. Es lo que mantiene todas las imágenes en el mismo universo visual — si lo omites, cada imagen te va a salir de un estilo distinto.</p>
+    <div class="pr" style="margin-top:14px" id="dna">BRAND STYLE (apply to every image):
+Clean editorial fintech photography, Klarna-like art direction. Warm off-white background (#F7F5F0), soft natural daylight, no harsh shadows. Calm, human, optimistic — real Mexican people, not corporate stock clichés. Accent colors only as props or wardrobe: electric blue (#3B6EF6), mint (#2FE0C6), deep navy (#0B1437). Minimal composition, lots of negative space, subject slightly off-center. Shot on 50mm, shallow depth of field, true-to-life skin tones. No text, no logos, no watermarks, no UI overlays.</div>
+    <button class="btn" onclick="cp('dna',this)">Copiar ADN de marca</button>
+    <p class="why">Por qué importa: los modelos de imagen no tienen memoria entre generaciones. El ADN es lo que hace que la foto del héroe y la de la sección de misión parezcan de la misma campaña.</p>
+  </div>
+
+  <h2 class="sh">Sitio público</h2>
+  <p class="shd">Lo que ve tu cliente. Estas son las que más pesan.</p>
+
+  <div class="grid">
+
+    <div class="pc">
+      <h3>Héroe principal</h3>
+      <div class="where">Arriba del todo, junto a "Tu crédito sin filas y sin letras chiquitas"</div>
+      <div class="meta"><span class="file">hero-aviv.jpg</span><span>3:4 vertical</span><span>2000 px</span></div>
+      <div class="pr" id="p1">A young Mexican woman in her early 30s standing in her small flower shop, holding a phone with both hands and smiling softly as she looks at it — the quiet relief of good news. Warm morning light through the shop window. She wears a simple mint-green apron. Background gently blurred: buckets of flowers, wooden shelves. Waist-up portrait, she occupies the right third of the frame, generous empty warm space on the left for text.</div>
+      <button class="btn" onclick="cp('p1',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Beneficio · Respuesta en 24 horas</h3>
+      <div class="where">Tarjeta 1 de la sección de beneficios</div>
+      <div class="meta"><span class="file">benef-24h.jpg</span><span>1:1 cuadrada</span><span>1200 px</span></div>
+      <div class="pr" id="p2">Close-up of a man's hands holding a phone at a kitchen table, morning coffee beside it, a notification glow on the screen (screen content abstract and unreadable). Everything else calm and still: a plant, a set of keys. Feels like an answer just arrived and it was a yes. Soft daylight, warm off-white tabletop, top-down 45° angle.</div>
+      <button class="btn" onclick="cp('p2',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Beneficio · Sin letras chiquitas</h3>
+      <div class="where">Tarjeta 2 de beneficios</div>
+      <div class="meta"><span class="file">benef-claro.jpg</span><span>1:1 cuadrada</span><span>1200 px</span></div>
+      <div class="pr" id="p3">A single sheet of blank cream paper resting on a warm off-white surface, one corner lifted by a light breeze, a pair of reading glasses set down beside it — nothing hidden, nothing to squint at. Extremely minimal still life, one soft shadow, mint-green pen as the only color accent. Editorial, almost architectural simplicity.</div>
+      <button class="btn" onclick="cp('p3',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Beneficio · Crecemos contigo</h3>
+      <div class="where">Tarjeta 3 de beneficios</div>
+      <div class="meta"><span class="file">benef-crecer.jpg</span><span>1:1 cuadrada</span><span>1200 px</span></div>
+      <div class="pr" id="p4">A taquería owner in his 40s pulling up the metal shutter of his shop at dawn, caught mid-motion, proud and awake. Warm sunrise light hitting the street. Blue apron. Shot from a low angle, slightly cinematic, lots of sky as negative space. Working-class Mexico City street, real and dignified — not touristy.</div>
+      <button class="btn" onclick="cp('p4',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Misión y visión</h3>
+      <div class="where">Banda oscura "Quiénes somos"</div>
+      <div class="meta"><span class="file">mision-aviv.jpg</span><span>4:5 vertical</span><span>1600 px</span></div>
+      <div class="pr" id="p5">Two people across a small table in a bright room: an advisor listening, a client talking with her hands. The advisor's posture is open, leaning in. No screens, no paperwork stacks — just attention. Deep navy wall behind them as a flat block of color, warm daylight from the side. Documentary feel, mid-shot, natural unposed body language.</div>
+      <button class="btn" onclick="cp('p5',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Cómo funciona (proceso)</h3>
+      <div class="where">Sección de pasos / simulador</div>
+      <div class="meta"><span class="file">proceso-aviv.jpg</span><span>16:9 horizontal</span><span>2000 px</span></div>
+      <div class="pr" id="p6">A woman sitting on the floor of her living room with her back against the sofa, laptop closed beside her, filling something out on her phone, relaxed and unhurried. Late afternoon light. Wide horizontal composition, she sits in the left third, warm empty wall on the right. The whole image should feel like "this took five minutes and I did it in my pajamas".</div>
+      <button class="btn" onclick="cp('p6',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Inversionistas</h3>
+      <div class="where">Banda "¿Eres inversionista?"</div>
+      <div class="meta"><span class="file">inversionistas.jpg</span><span>1:1 cuadrada</span><span>1600 px</span></div>
+      <div class="pr" id="p7">Abstract sculptural still life: three smooth rounded blocks stacked with growing heights, made of matte ceramic — one navy, one electric blue, one mint. Lit like a museum object on a warm off-white backdrop, single soft shadow. Calm, confident, expensive-looking. No charts, no arrows, no money imagery.</div>
+      <button class="btn" onclick="cp('p7',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Imagen para redes / WhatsApp</h3>
+      <div class="where">Vista previa al compartir el link (og:image)</div>
+      <div class="meta"><span class="file">og-aviv.jpg</span><span>1200×630 px</span><span>exacto</span></div>
+      <div class="pr" id="p8">Wide banner composition: a smiling young Mexican woman holding her phone, positioned on the right side of the frame, looking toward the empty left half. Warm off-white background, mint and electric blue soft geometric shapes floating subtly behind her like flat paper cutouts. Clean, bright, poster-like. Leave the entire left half visually calm and uncluttered for a headline.</div>
+      <button class="btn" onclick="cp('p8',this)">Copiar prompt</button>
+    </div>
+
+  </div>
+
+  <h2 class="sh">Retratos para el CRM</h2>
+  <p class="shd">Avatares de clientes de la demo — que se vea vivo cuando se lo enseñes a tu cliente.</p>
+
+  <div class="grid">
+
+    <div class="pc">
+      <h3>Set de avatares</h3>
+      <div class="where">Clientes 360° y cola de cobranza</div>
+      <div class="meta"><span class="file">avatar-01.jpg … 10</span><span>1:1</span><span>400 px</span></div>
+      <div class="pr" id="p9">Head-and-shoulders portrait of a Mexican small business owner, mid-30s, neutral friendly expression, looking straight at camera. Plain warm off-white background, even soft light, no props. Passport-like framing but human and warm, not clinical. Generate 10 different people: mix of ages 25–60, men and women, varied skin tones and body types, everyday clothing (aprons, work shirts, blouses) — real people who run tortillerías, salons, workshops, pharmacies.</div>
+      <button class="btn" onclick="cp('p9',this)">Copiar prompt</button>
+    </div>
+
+    <div class="pc">
+      <h3>Estado vacío del CRM</h3>
+      <div class="where">Cuando no hay solicitudes en una columna</div>
+      <div class="meta"><span class="file">empty-state.png</span><span>1:1</span><span>fondo transparente</span></div>
+      <div class="pr" id="p10">Minimal 3D illustration of an empty rounded tray or open folder, matte clay material, navy and mint colors, floating with a soft shadow. Friendly and calm, not sad. Transparent background, no text. Simple enough to read at 200 px.</div>
+      <button class="btn" onclick="cp('p10',this)">Copiar prompt</button>
+    </div>
+
+  </div>
+
+  <div class="tips">
+    <h2>Para que salgan bien a la primera</h2>
+    <div class="tip"><span class="e">🧬</span><div><b>Siempre pega el ADN primero</b><p>ADN + prompt, en ese orden, en el mismo mensaje. Es la diferencia entre una campaña y un collage de imágenes sueltas.</p></div></div>
+    <div class="tip"><span class="e">🔁</span><div><b>Si una te encanta, no la vuelvas a generar: edítala</b><p>Nano Banana edita la imagen que ya tienes. Súbela y pídele el cambio ("haz el fondo más claro", "quita la planta"). Regenerar desde cero te da otra persona distinta.</p></div></div>
+    <div class="tip"><span class="e">🚫</span><div><b>Nada de texto dentro de la imagen</b><p>Los modelos escriben mal en español y se ve barato. El texto va en HTML, encima. Por eso todos los prompts piden espacio vacío.</p></div></div>
+    <div class="tip"><span class="e">📁</span><div><b>Guarda todo junto a los HTML</b><p>Descarga cada imagen con el nombre que dice su tarjeta y ponla en la misma carpeta que <code>index.html</code>. Avísame cuando estén y yo las conecto al sitio.</p></div></div>
+    <div class="tip"><span class="e">⚖️</span><div><b>Rostros generados por IA</b><p>Son personas que no existen, así que no hay problema de derechos de imagen — pero no las presentes como clientes reales ni les pongas testimonios con nombre y apellido.</p></div></div>
+  </div>
+
+  <div class="foot">Aviv · Crecemos contigo — prompts de imagen, julio 2026.</div>
+</div>
+
+<div class="toast" id="toast">Copiado ✓</div>
+
+<script>
+function cp(id,btn){
+  const t=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(t).then(()=>{
+    const o=btn.textContent; btn.textContent='Copiado ✓'; btn.classList.add('ok');
+    const tt=document.getElementById('toast'); tt.classList.add('on');
+    setTimeout(()=>{btn.textContent=o;btn.classList.remove('ok');tt.classList.remove('on')},1600);
+  }).catch(()=>{
+    const r=document.createRange(); r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges(); window.getSelection().addRange(r);
+    document.execCommand('copy'); window.getSelection().removeAllRanges();
+    btn.textContent='Copiado ✓';
+  });
+}
+</script>
+</body>
+</html>

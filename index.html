@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Aviv — Tu crédito sin filas y sin letras chiquitas. Solicita desde tu celular y recibe respuesta en menos de 24 horas.">
+<meta name="theme-color" content="#0B1437">
+<title>Aviv · Crédito inteligente, claro y a tu ritmo</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Plataforma de crédito mexicana. Simula tu crédito y solicítalo 100% en línea en 5 minutos.">
+<meta property="og:title" content="Aviv · Crédito inteligente, claro y a tu ritmo">
+<meta property="og:description" content="Plataforma de crédito mexicana. Simula tu crédito y solicítalo 100% en línea en 5 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-aviv.jpg">
+<meta name="theme-color" content="#0B1437">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#3B6EF6;--blue-deep:#2454E6;--indigo:#4338CA;--teal:#2FE0C6;--green:#34D399;
+  --grad:linear-gradient(155deg,#3AE7CF 0%,#3B6EF6 46%,#4338CA 100%);
+  --grad-h:linear-gradient(90deg,#3AE7CF,#6AA8FF);
+  --navy:#0B1437;--navy2:#0d1740;
+  --ink:#0B1437;--ink2:#3A4468;--muted:#8B94AE;
+  --bg:#F4F7FE;--line:#E9EEF9;--blue-soft:#EAF1FE;--teal-soft:#E1FBF4;
+  --sh:0 26px 54px -22px rgba(37,84,230,.38);
+  --sh-sm:0 14px 30px -18px rgba(11,20,55,.24);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--ktext);background:#f0f4fc;color:var(--ink);-webkit-font-smoothing:antialiased;letter-spacing:-.011em;overflow-x:hidden}
+h1,h2,h3,.num{font-family:var(--kdisp)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.gt{background:var(--grad-h);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gtd{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+#pbar{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:2000;width:0;border-radius:0 3px 3px 0}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s,box-shadow .3s,backdrop-filter .3s,transform .4s cubic-bezier(.2,.7,.2,1);padding:18px 0}
+#nav.hide{transform:translateY(-125%)}
+nav.solid{background:rgba(11,20,55,.82);backdrop-filter:blur(16px);box-shadow:0 10px 40px -20px rgba(0,0,0,.5);padding:12px 0}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.nlogo{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+.nlogo .lg{width:42px;height:42px;border-radius:13px;background:var(--grad);display:grid;place-items:center;font-family:var(--kdisp);font-weight:800;font-size:20px;box-shadow:0 12px 26px -8px rgba(59,110,246,.7)}
+.nlogo b{font-family:var(--kdisp);font-size:20px;font-weight:800;letter-spacing:-.5px}
+.nlogo .lgimg{width:auto;height:40px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(58,231,207,.55))}
+.wbrand .lgimg{width:auto;height:34px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(58,231,207,.55))}
+#nav .nlogo b{background:linear-gradient(92deg,#0FB5D6 0%,#2C5BEE 52%,#5A34D6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;letter-spacing:-.4px}
+footer .nlogo b,.wbrand b,.invlogo b{background:linear-gradient(92deg,#7FEBD8,#8FC0FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.nlinks{display:flex;align-items:center;gap:28px}
+.nlinks a{color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;font-weight:700;transition:color .2s}
+.nlinks a:hover{color:#fff}
+.ncta{background:#fff!important;color:var(--blue-deep)!important;padding:12px 22px;border-radius:13px;box-shadow:0 14px 30px -12px rgba(255,255,255,.4);transition:transform .15s!important}
+.ncta:hover{transform:translateY(-2px)}
+@media(max-width:860px){.nlinks a:not(.ncta){display:none}}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;background:var(--navy);color:#fff;padding:170px 0 120px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,#1e37907d 0%,transparent 62%);top:-380px;right:-260px;animation:drift 14s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#0e4a4277 0%,transparent 60%);bottom:-320px;left:-220px;animation:drift 17s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.12)}}
+#stars{position:absolute;inset:0;pointer-events:none}
+.hgrid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hkick{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:10px 18px;font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8fe8d8}
+.hkick .dot{width:8px;height:8px;border-radius:50%;background:#3AE7CF;box-shadow:0 0 14px #3AE7CF;animation:blink 1.7s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800;letter-spacing:-2.6px;line-height:1.03;margin:24px 0 20px}
+.hero .hp{font-size:17.5px;color:rgba(255,255,255,.78);font-weight:500;line-height:1.7;max-width:520px;margin-bottom:32px}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.storebtn{display:flex;align-items:center;gap:12px;background:#fff;color:var(--navy);text-decoration:none;padding:13px 22px;border-radius:16px;transition:transform .18s,box-shadow .25s;box-shadow:0 18px 40px -14px rgba(255,255,255,.35)}
+.storebtn:hover{transform:translateY(-3px);box-shadow:0 24px 50px -12px rgba(58,231,207,.45)}
+.storebtn.ghost{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:#fff;box-shadow:none}
+.storebtn .si{font-size:26px}
+.storebtn small{display:block;font-size:10px;font-weight:700;opacity:.7;letter-spacing:.04em}
+.storebtn b{font-family:var(--kdisp);font-size:15.5px;font-weight:800;letter-spacing:-.2px}
+.htrust{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.55)}
+.htrust span{display:flex;align-items:center;gap:7px}
+
+/* teléfono flotante */
+.hphone{position:relative;display:flex;justify-content:center}
+.phone{width:320px;height:660px;background:#fff;border-radius:44px;padding:11px;box-shadow:0 60px 130px -40px rgba(0,0,0,.65),0 0 0 10px #060d26,0 0 0 12px #1a2350;transform:rotate(4deg);animation:pfloat 6s ease-in-out infinite}
+@keyframes pfloat{0%,100%{transform:rotate(4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-16px)}}
+.pscreen{width:100%;height:100%;background:var(--bg);border-radius:34px;overflow:hidden;position:relative;padding:52px 16px 20px}
+.pnotch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:110px;height:24px;background:#060d26;border-radius:0 0 16px 16px}
+.pgreet{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.pav{width:38px;height:38px;border-radius:12px;background:linear-gradient(150deg,#5EEAD4,#6AA8FF);display:grid;place-items:center;font-weight:800;color:#fff;font-size:14px}
+.pgreet b{font-size:13.5px;font-weight:800;display:block}
+.pgreet span{font-size:10.5px;color:var(--muted);font-weight:600}
+.pcard{background:var(--grad);border-radius:20px;padding:16px;color:#fff;box-shadow:0 18px 36px -14px rgba(37,84,230,.55);position:relative;overflow:hidden;margin-bottom:12px}
+.pcard::after{content:"";position:absolute;width:130px;height:130px;right:-44px;top:-52px;border-radius:50%;background:rgba(255,255,255,.13)}
+.pcard p{font-size:10.5px;font-weight:700;opacity:.92}
+.pcard .amt{font-family:var(--kdisp);font-size:28px;font-weight:800;letter-spacing:-1.2px;margin:3px 0}
+.pcard .bar{height:6px;background:rgba(255,255,255,.25);border-radius:9px;margin:9px 0 7px;overflow:hidden}
+.pcard .bar i{display:block;height:100%;width:75%;background:#fff;border-radius:9px}
+.pcard .r{display:flex;justify-content:space-between;font-size:10px;font-weight:600;opacity:.9}
+.pring{display:flex;align-items:center;gap:14px;background:#fff;border-radius:20px;padding:14px;box-shadow:var(--sh-sm);margin-bottom:12px}
+.ring{--p:84;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--teal) calc(var(--p)*1%),#e6ecf7 0);display:grid;place-items:center;position:relative;flex:none}
+.ring::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#fff}
+.ring b{position:relative;z-index:2;font-family:var(--kdisp);font-size:20px;font-weight:800;letter-spacing:-1px}
+.pring .m b{font-size:13px;font-weight:800;display:block}
+.pring .m span{font-size:10.5px;color:var(--muted);font-weight:600;line-height:1.4;display:block;margin-top:3px}
+.pchat{background:var(--navy);border-radius:20px;padding:13px;color:#fff;display:flex;gap:10px;align-items:flex-start}
+.pchat .ai{width:28px;height:28px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-size:13px;flex:none}
+.pchat p{font-size:11px;line-height:1.5;font-weight:500}
+.pchat b{font-weight:800;color:#7CF0DC}
+.chip{position:absolute;background:rgba(255,255,255,.09);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:13px 17px;color:#fff;display:flex;align-items:center;gap:11px;box-shadow:0 20px 46px -18px rgba(0,0,0,.55);z-index:3;animation:cfloat 5s ease-in-out infinite}
+@keyframes cfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.chip .ci{width:34px;height:34px;border-radius:11px;background:var(--grad);display:grid;place-items:center;font-size:15px}
+.chip b{font-family:var(--kdisp);font-size:14.5px;font-weight:800;display:block;letter-spacing:-.3px}
+.chip small{font-size:10.5px;opacity:.85;font-weight:600}
+.chip.c1{top:6%;left:-4%;animation-delay:.6s}
+.chip.c2{bottom:14%;right:-6%;animation-delay:1.4s}
+.chip.c3{top:44%;left:-14%;animation-delay:2.2s}
+@media(max-width:960px){.hgrid{grid-template-columns:1fr;gap:50px}.hphone{order:2}.chip.c3{left:-2%}}
+
+/* marquee */
+.marq{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden;padding:20px 0 84px;position:relative;z-index:2}
+.mtrack{display:flex;gap:52px;white-space:nowrap;animation:marq 26s linear infinite;width:max-content}
+.mtrack span{color:rgba(255,255,255,.5);font-size:13.5px;font-weight:800;letter-spacing:.06em;display:flex;align-items:center;gap:12px}
+.mtrack span i{font-style:normal;color:#3AE7CF}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ STATS ═══ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-56px;position:relative;z-index:5}
+.stat{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px 20px;text-align:center;box-shadow:0 24px 54px -24px rgba(11,20,55,.35)}
+.stat .num{font-size:36px;font-weight:800;letter-spacing:-1.8px;display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat span{font-size:12.5px;color:var(--muted);font-weight:700}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══ SECCIONES ═══ */
+.sec{padding:110px 0 0}
+.shead{text-align:center;max-width:660px;margin:0 auto 52px}
+.kick{display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue-deep);font-size:12px;font-weight:800;padding:9px 16px;border-radius:999px;letter-spacing:.05em}
+.shead h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1.8px;line-height:1.08;margin:18px 0 14px}
+.shead p{font-size:16px;color:var(--ink2);font-weight:500;line-height:1.7}
+
+/* simulador */
+.simbox{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:#fff;border-radius:34px;overflow:hidden;box-shadow:0 44px 100px -36px rgba(37,84,230,.4);border:1px solid var(--line)}
+.siml{padding:46px 44px}
+.siml h3{font-size:24px;font-weight:800;letter-spacing:-.8px;margin-bottom:6px}
+.siml .ss{font-size:13.5px;color:var(--muted);font-weight:600;margin-bottom:28px}
+.slab{font-size:13px;font-weight:800;color:var(--ink2);margin:22px 0 10px;display:flex;justify-content:space-between}
+.slab output{font-family:var(--kdisp);font-size:17px;font-weight:800;color:var(--blue-deep);letter-spacing:-.5px}
+.rng{-webkit-appearance:none;width:100%;height:9px;border-radius:9px;background:var(--blue-soft);outline:none}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:6px solid var(--blue);box-shadow:0 8px 18px -5px rgba(59,110,246,.7);cursor:pointer}
+.terms{display:flex;gap:10px;margin-top:4px}
+.term{flex:1;text-align:center;padding:13px 0;border-radius:14px;border:1.6px solid var(--line);font-weight:800;font-size:15px;cursor:pointer;background:#fff;transition:.15s;color:var(--ink2)}
+.term small{display:block;font-size:10px;color:var(--muted);font-weight:700;margin-top:2px}
+.term.on{border-color:var(--blue);background:var(--blue-soft);color:var(--blue-deep)}
+.inc{display:flex;align-items:center;gap:9px;border:1.6px solid var(--line);border-radius:14px;padding:0 16px;margin-top:4px}
+.inc span{font-size:17px;font-weight:800;color:var(--muted)}
+.inc input{flex:1;border:0;outline:0;padding:15px 0;font-family:inherit;font-size:17px;font-weight:800;color:var(--ink);min-width:0;background:transparent}
+.simr{background:var(--grad);background-size:180% 180%;animation:gs 12s ease infinite;padding:46px 44px;color:#fff;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.simr::before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.12);top:-90px;right:-70px}
+.simr .ql{font-size:13.5px;font-weight:800;opacity:.95;position:relative}
+.simr .qv{font-family:var(--kdisp);font-size:clamp(44px,4.6vw,58px);font-weight:800;letter-spacing:-2.6px;margin:4px 0;position:relative}
+.simr .qm{font-size:13px;font-weight:700;opacity:.92;margin-bottom:20px;position:relative}
+.ratio{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:14px 18px;font-size:13.5px;font-weight:800;position:relative;backdrop-filter:blur(6px)}
+.skv{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;padding:11px 2px;border-bottom:1px solid rgba(255,255,255,.2);position:relative}
+.skv:last-of-type{border:0}
+.simbtn{display:block;text-align:center;background:#fff;color:var(--blue-deep);font-family:inherit;font-weight:800;font-size:15.5px;padding:17px;border-radius:16px;border:0;cursor:pointer;text-decoration:none;margin-top:18px;position:relative;transition:transform .15s;box-shadow:0 18px 40px -14px rgba(11,20,55,.4)}
+.simbtn:hover{transform:translateY(-2px)}
+.simnote{font-size:10.5px;opacity:.8;font-weight:600;text-align:center;margin-top:12px;position:relative}
+@media(max-width:900px){.simbox{grid-template-columns:1fr}.siml,.simr{padding:34px 26px}}
+
+/* features */
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fc{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px 26px;box-shadow:var(--sh-sm);position:relative;overflow:hidden;transition:transform .25s,box-shadow .3s,border-color .25s}
+.fc::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:var(--blue-soft);top:-70px;right:-60px;opacity:0;transition:opacity .3s}
+.fc:hover{transform:translateY(-6px);border-color:#bfd4fb;box-shadow:0 30px 60px -24px rgba(37,84,230,.4)}
+.fc:hover::before{opacity:1}
+.fc .fi{width:54px;height:54px;border-radius:17px;background:var(--grad);display:grid;place-items:center;font-size:24px;color:#fff;margin-bottom:18px;box-shadow:0 14px 28px -10px rgba(59,110,246,.6);position:relative}
+.fc h3{font-size:18px;font-weight:800;letter-spacing:-.4px;margin-bottom:9px;position:relative}
+.fc p{font-size:13.5px;color:var(--ink2);font-weight:500;line-height:1.65;position:relative}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.fgrid{grid-template-columns:1fr}}
+
+/* pasos */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:paso}
+.step{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 24px;box-shadow:var(--sh-sm);position:relative;transition:transform .2s}
+.step:hover{transform:translateY(-4px)}
+.step::before{counter-increment:paso;content:counter(paso,decimal-leading-zero);font-family:var(--kdisp);font-size:46px;font-weight:800;letter-spacing:-2px;background:linear-gradient(155deg,#c8d9fb,#e3ecfd);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:10px}
+.step b{font-size:16px;font-weight:800;display:block;margin-bottom:8px;letter-spacing:-.3px}
+.step p{font-size:13px;color:var(--ink2);font-weight:500;line-height:1.6}
+.step .tag{position:absolute;top:24px;right:20px;font-size:10px;font-weight:800;color:#0d9488;background:var(--teal-soft);padding:5px 10px;border-radius:999px}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ═══ IA ═══ */
+.aisec{margin-top:110px;background:radial-gradient(1000px 560px at 82% -12%,#1b2f78 0%,transparent 58%),radial-gradient(760px 480px at -8% 112%,#0f3d38 0%,transparent 55%),var(--navy);color:#fff;padding:100px 0;position:relative;overflow:hidden}
+.aisec::after{content:"";position:absolute;width:380px;height:380px;right:-130px;top:-150px;border-radius:50%;background:var(--grad);opacity:.18;filter:blur(24px)}
+.aigrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
+.aikick{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.17);border-radius:999px;padding:9px 16px;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8fe8d8}
+.aigrid h2{font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-1.7px;line-height:1.08;margin:20px 0 16px}
+.aigrid .ap{font-size:15.5px;color:rgba(255,255,255,.76);font-weight:500;line-height:1.7;margin-bottom:26px}
+.ails{display:flex;flex-direction:column;gap:15px}
+.ail{display:flex;gap:14px;align-items:flex-start}
+.ail .ic{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;font-size:19px;flex:none}
+.ail b{font-size:15px;font-weight:800;display:block;margin-bottom:3px}
+.ail span{font-size:12.5px;color:rgba(255,255,255,.62);font-weight:500;line-height:1.55}
+.chatbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:24px;backdrop-filter:blur(10px);box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
+.chathead{display:flex;align-items:center;gap:11px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.chathead .ai{width:38px;height:38px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-size:17px}
+.chathead b{font-size:15px;font-weight:800;display:block}
+.chathead span{font-size:11px;color:#7CF0DC;font-weight:700;display:flex;align-items:center;gap:6px}
+.chathead span::before{content:"";width:7px;height:7px;border-radius:50%;background:#3AE7CF;box-shadow:0 0 10px #3AE7CF}
+.bub{max-width:85%;padding:13px 16px;border-radius:17px;font-size:13.5px;line-height:1.55;margin-bottom:12px;font-weight:500;opacity:0;transform:translateY(12px);transition:.5s cubic-bezier(.2,.7,.2,1)}
+.bub.show{opacity:1;transform:none}
+.bub.them{background:rgba(255,255,255,.09);border-bottom-left-radius:6px}
+.bub.me{background:var(--blue);border-bottom-right-radius:6px;margin-left:auto}
+.bub b{font-weight:800;color:#7CF0DC}
+.bub.me b{color:#fff}
+.typing{display:inline-flex;gap:5px;padding:14px 18px}
+.typing i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);animation:tb .9s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tb{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-6px);opacity:1}}
+@media(max-width:900px){.aigrid{grid-template-columns:1fr;gap:44px}}
+
+/* testimonios */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px 26px;box-shadow:var(--sh-sm);transition:transform .2s}
+.tc:hover{transform:translateY(-4px)}
+.tc .strs{color:#F5B544;font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.tc p{font-size:14px;color:var(--ink2);font-weight:500;line-height:1.7;margin-bottom:20px}
+.tc .who{display:flex;align-items:center;gap:12px}
+.tc .who .av{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-weight:800;color:#fff;font-size:15px}
+.tc .who b{font-size:14px;font-weight:800;display:block}
+.tc .who span{font-size:11.5px;color:var(--muted);font-weight:600}
+@media(max-width:860px){.tgrid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+.q{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:12px;overflow:hidden;box-shadow:0 10px 24px -18px rgba(11,20,55,.3)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:0;padding:20px 24px;font-family:inherit;font-size:15px;font-weight:800;color:var(--ink);cursor:pointer;text-align:left}
+.q .ar{width:30px;height:30px;border-radius:10px;background:var(--blue-soft);color:var(--blue-deep);display:grid;place-items:center;font-size:14px;flex:none;transition:transform .3s,background .3s}
+.q.open .ar{transform:rotate(45deg);background:var(--blue);color:#fff}
+.q .a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.q .a p{padding:0 24px 22px;font-size:13.5px;color:var(--ink2);font-weight:500;line-height:1.7}
+
+/* CTA final */
+.dl{margin-top:110px;position:relative}
+.dlbox{background:var(--grad);background-size:200% 200%;animation:gs 12s ease infinite;border-radius:40px;padding:80px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 60px 130px -40px rgba(37,84,230,.6)}
+.dlbox::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.12);top:-140px;left:-100px}
+.dlbox::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.1);bottom:-130px;right:-80px}
+.dlbox h2{font-size:clamp(32px,4.6vw,54px);font-weight:800;letter-spacing:-2.2px;line-height:1.05;position:relative;z-index:2}
+.dlbox p{font-size:16.5px;font-weight:600;opacity:.95;margin:18px auto 34px;max-width:540px;line-height:1.65;position:relative;z-index:2}
+.dlbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.dlbtns .storebtn{box-shadow:0 24px 54px -16px rgba(11,20,55,.5)}
+.dlsub{display:block;margin-top:22px;font-size:12.5px;font-weight:700;opacity:.85;position:relative;z-index:2}
+
+/* footer */
+footer{background:var(--navy);color:#fff;margin-top:110px;padding:70px 0 36px}
+.fgridf{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.fbrand p{font-size:13px;color:rgba(255,255,255,.6);font-weight:500;line-height:1.7;margin-top:16px;max-width:300px}
+.fcol b{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-bottom:18px}
+.fcol a{display:block;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;font-weight:600;margin-bottom:12px;transition:color .2s}
+.fcol a:hover{color:#3AE7CF}
+.legal{border-top:1px solid rgba(255,255,255,.09);padding-top:28px;font-size:11px;color:rgba(255,255,255,.4);font-weight:500;line-height:1.8}
+.legal b{color:rgba(255,255,255,.6)}
+@media(max-width:860px){.fgridf{grid-template-columns:1fr 1fr}}
+
+/* ═══════════ WIZARD DE SOLICITUD (lujo) ═══════════ */
+#wiz{position:fixed;inset:0;z-index:3000;background:radial-gradient(1100px 700px at 75% 15%,#16255e 0%,#0B1437 55%,#060c22 100%);display:none;overflow:hidden}
+#wiz.open{display:block}
+#wiz::before,#wiz::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+#wiz::before{width:460px;height:460px;background:#3B6EF6;top:-160px;left:-140px;animation:drift 12s ease-in-out infinite alternate}
+#wiz::after{width:400px;height:400px;background:#0e6e60;bottom:-160px;right:-120px;animation:drift 15s ease-in-out infinite alternate-reverse}
+.wtop{position:absolute;top:0;left:0;right:0;z-index:10;padding:22px 28px;display:flex;align-items:center;justify-content:space-between}
+.wbrand{display:flex;align-items:center;gap:10px;color:#fff}
+.wbrand .lg{width:36px;height:36px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-family:var(--kdisp);font-weight:800;font-size:17px}
+.wbrand b{font-family:var(--kdisp);font-size:17px;font-weight:800}
+.wclose{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:17px;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.wclose:hover{background:rgba(255,255,255,.16)}
+.wprog{position:absolute;top:0;left:0;height:4px;background:var(--grad);width:0;transition:width .5s cubic-bezier(.2,.7,.2,1);z-index:12;border-radius:0 4px 4px 0;box-shadow:0 0 18px rgba(58,231,207,.7)}
+.wstage{position:absolute;inset:0;display:grid;place-items:center;padding:90px 24px 110px;overflow-y:auto}
+.wstep{width:100%;max-width:620px;display:none;animation:win .55s cubic-bezier(.2,.75,.25,1) both}
+.wstep.on{display:block}
+@keyframes win{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.wq{color:#8fe8d8;font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.wq .n{width:26px;height:26px;border-radius:9px;background:rgba(58,231,207,.14);border:1px solid rgba(58,231,207,.3);display:grid;place-items:center;font-size:12px;color:#3AE7CF}
+.wstep h2{color:#fff;font-family:var(--kdisp);font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:10px}
+.wstep .wh{color:rgba(255,255,255,.62);font-size:15px;font-weight:500;line-height:1.65;margin-bottom:30px}
+.winp{width:100%;background:transparent;border:0;border-bottom:2.5px solid rgba(255,255,255,.18);color:#fff;font-family:var(--kdisp);font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-1px;padding:10px 2px 14px;outline:none;transition:border-color .25s}
+.winp::placeholder{color:rgba(255,255,255,.22);font-weight:600}
+.winp:focus{border-color:#3AE7CF}
+.werr{color:#fda4af;font-size:13px;font-weight:700;margin-top:12px;min-height:18px}
+.wnav{display:flex;align-items:center;gap:14px;margin-top:34px}
+.wbtn{border:0;background:var(--grad);color:#fff;font-family:inherit;font-weight:800;font-size:16px;padding:17px 34px;border-radius:16px;cursor:pointer;box-shadow:0 20px 44px -14px rgba(59,110,246,.75);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
+.wbtn:hover{transform:translateY(-2px)}
+.wbtn:active{transform:scale(.97)}
+.wback{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:rgba(255,255,255,.8);font-family:inherit;font-weight:800;font-size:14px;padding:16px 22px;border-radius:15px;cursor:pointer;transition:.2s}
+.wback:hover{background:rgba(255,255,255,.12)}
+.wenter{color:rgba(255,255,255,.35);font-size:12px;font-weight:700}
+.wenter b{color:rgba(255,255,255,.6)}
+/* chips de selección */
+.wchips{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.wchip{background:rgba(255,255,255,.05);border:1.6px solid rgba(255,255,255,.14);border-radius:18px;padding:19px 20px;color:#fff;cursor:pointer;display:flex;align-items:center;gap:13px;transition:.18s;font-weight:700;font-size:15px}
+.wchip .we{font-size:22px}
+.wchip:hover{border-color:rgba(58,231,207,.5);background:rgba(58,231,207,.06);transform:translateY(-2px)}
+.wchip.on{border-color:#3AE7CF;background:rgba(58,231,207,.13);box-shadow:0 14px 34px -14px rgba(58,231,207,.5)}
+/* slider lujo */
+.wamt{font-family:var(--kdisp);color:#fff;font-size:clamp(48px,7vw,74px);font-weight:800;letter-spacing:-3px;text-align:center;margin:6px 0 4px;background:linear-gradient(90deg,#3AE7CF,#6AA8FF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrng{-webkit-appearance:none;width:100%;height:10px;border-radius:10px;background:rgba(255,255,255,.12);outline:none;margin:22px 0 8px}
+.wrng::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:#fff;border:7px solid #3AE7CF;box-shadow:0 10px 26px -6px rgba(58,231,207,.8);cursor:pointer}
+.wminmax{display:flex;justify-content:space-between;color:rgba(255,255,255,.4);font-size:12.5px;font-weight:700}
+.wlive{text-align:center;margin-top:18px;color:#7CF0DC;font-size:14.5px;font-weight:800;min-height:22px}
+/* oferta parcial */
+.woffer{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:28px;backdrop-filter:blur(10px);text-align:center;margin-bottom:8px}
+.woffer .ol{color:rgba(255,255,255,.6);font-size:13px;font-weight:800}
+.woffer .ov{font-family:var(--kdisp);color:#fff;font-size:clamp(40px,5vw,56px);font-weight:800;letter-spacing:-2.4px;margin:4px 0}
+.woffer .om{color:#7CF0DC;font-size:13.5px;font-weight:800}
+.wkvs{display:flex;gap:12px;margin-top:18px}
+.wkv{flex:1;background:rgba(255,255,255,.07);border-radius:15px;padding:13px;text-align:center}
+.wkv small{display:block;color:rgba(255,255,255,.5);font-size:10.5px;font-weight:800;margin-bottom:4px;letter-spacing:.04em}
+.wkv b{color:#fff;font-family:var(--kdisp);font-size:16.5px;font-weight:800}
+/* código sms */
+.wcode{display:flex;gap:12px;justify-content:flex-start}
+.wcode input{width:64px;height:76px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.16);border-radius:18px;color:#fff;font-family:var(--kdisp);font-size:30px;font-weight:800;text-align:center;outline:none;transition:.2s}
+.wcode input:focus{border-color:#3AE7CF;background:rgba(58,231,207,.08)}
+.smstoast{position:absolute;top:76px;left:50%;transform:translateX(-50%) translateY(-24px);background:rgba(255,255,255,.97);border-radius:18px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);z-index:40;opacity:0;transition:.5s cubic-bezier(.2,.8,.25,1.15);pointer-events:none;min-width:300px}
+.smstoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.smstoast .si{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-size:18px;flex:none}
+.smstoast b{font-size:13px;font-weight:800;color:var(--ink);display:block}
+.smstoast span{font-size:12.5px;color:var(--ink2);font-weight:600}
+.smstoast span em{font-style:normal;font-weight:800;color:var(--blue-deep);letter-spacing:2px}
+/* documentos */
+.wdocs{display:flex;flex-direction:column;gap:12px}
+.wdoc{background:rgba(255,255,255,.05);border:1.6px dashed rgba(255,255,255,.22);border-radius:18px;padding:17px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:.2s;color:#fff}
+.wdoc:hover{border-color:rgba(58,231,207,.55);background:rgba(58,231,207,.05)}
+.wdoc .di{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:20px;flex:none}
+.wdoc .dm{flex:1}
+.wdoc .dm b{font-size:14.5px;font-weight:800;display:block}
+.wdoc .dm span{font-size:11.5px;color:rgba(255,255,255,.5);font-weight:600}
+.wdoc .dbar{height:5px;background:rgba(255,255,255,.12);border-radius:6px;margin-top:8px;overflow:hidden;display:none}
+.wdoc .dbar i{display:block;height:100%;width:0;background:var(--grad);border-radius:6px;transition:width 1.1s ease}
+.wdoc .dst{font-size:12px;font-weight:800;color:#8fa2d9;flex:none}
+.wdoc.up .dbar{display:block}
+.wdoc.done{border-style:solid;border-color:#3AE7CF;background:rgba(58,231,207,.09)}
+.wdoc.done .dst{color:#3AE7CF}
+/* consentimiento */
+.wcons{background:rgba(255,255,255,.05);border:1.6px solid rgba(255,255,255,.15);border-radius:18px;padding:19px;display:flex;gap:14px;cursor:pointer;transition:.2s;align-items:flex-start}
+.wcons .box{width:26px;height:26px;border-radius:9px;border:2px solid rgba(255,255,255,.3);flex:none;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800;transition:.2s}
+.wcons.on{border-color:#3AE7CF;background:rgba(58,231,207,.08)}
+.wcons.on .box{background:var(--grad);border-color:transparent}
+.wcons.on .box::after{content:"✓"}
+.wcons p{color:rgba(255,255,255,.72);font-size:13px;font-weight:500;line-height:1.6}
+.wcons p b{color:#fff}
+/* análisis IA */
+.wai{display:flex;flex-direction:column;gap:15px;margin-top:6px}
+.wail{display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:17px;padding:16px 19px;opacity:.35;transition:.4s}
+.wail.act{opacity:1;border-color:rgba(58,231,207,.4)}
+.wail.ok{opacity:1}
+.wail .ic{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:18px;flex:none}
+.wail.ok .ic{background:rgba(58,231,207,.16)}
+.wail b{color:#fff;font-size:14.5px;font-weight:800;display:block}
+.wail span{color:rgba(255,255,255,.5);font-size:12px;font-weight:600}
+.wail .st{margin-left:auto;flex:none;font-size:17px}
+.wail .sp{width:20px;height:20px;border:3px solid rgba(255,255,255,.15);border-top-color:#3AE7CF;border-radius:50%;animation:spin .8s linear infinite;display:none}
+.wail.act .sp{display:block}
+.wail .ck{display:none;color:#3AE7CF;font-weight:800}
+.wail.ok .ck{display:block}
+.wail.ok .sp{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* firma */
+.wsign{background:rgba(255,255,255,.05);border:1.6px solid rgba(255,255,255,.16);border-radius:20px;padding:24px;text-align:center}
+.wsign input{width:100%;background:transparent;border:0;border-bottom:2px dashed rgba(255,255,255,.3);color:#fff;font-family:'Segoe Script','Brush Script MT',cursive;font-size:30px;text-align:center;padding:8px 4px 12px;outline:none}
+.wsign small{display:block;margin-top:10px;color:rgba(255,255,255,.4);font-size:11.5px;font-weight:700}
+/* éxito */
+.wdone{text-align:center}
+.wbig{width:104px;height:104px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-size:46px;margin:0 auto 24px;box-shadow:0 30px 70px -18px rgba(58,231,207,.6);animation:ipop2 .8s cubic-bezier(.2,.8,.25,1.3) both}
+@keyframes ipop2{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+.wtimeline{max-width:430px;margin:26px auto 0;text-align:left}
+.wtl{display:flex;gap:14px;padding:13px 0;position:relative}
+.wtl:not(:last-child)::before{content:"";position:absolute;left:14px;top:40px;bottom:-8px;width:2px;background:rgba(255,255,255,.14)}
+.wtl .d{width:29px;height:29px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;flex:none;z-index:1}
+.wtl.ok .d{background:var(--grad)}
+.wtl.act .d{background:var(--blue);animation:pulse2 1.6s infinite}
+@keyframes pulse2{0%,100%{box-shadow:0 0 0 5px rgba(59,110,246,.2)}50%{box-shadow:0 0 0 11px rgba(59,110,246,.04)}}
+.wtl b{color:#fff;font-size:14px;font-weight:800;display:block}
+.wtl span{color:rgba(255,255,255,.5);font-size:12px;font-weight:600}
+@media(max-width:620px){.wchips{grid-template-columns:1fr}.wcode input{width:56px;height:66px;font-size:26px}.wstage{padding:80px 18px 90px}}
+
+/* ═══════════ CHATBOT ═══════════ */
+#chatfab{position:fixed;bottom:26px;right:26px;z-index:2500;display:flex;align-items:center;gap:12px;cursor:pointer}
+#chatfab .flabel{background:#fff;border-radius:14px;padding:11px 17px;font-size:13px;font-weight:800;color:var(--ink);box-shadow:0 18px 44px -14px rgba(11,20,55,.45);opacity:0;transform:translateX(10px);transition:.4s;pointer-events:none}
+#chatfab .flabel.show{opacity:1;transform:none}
+#chatfab .fbtn{width:64px;height:64px;border-radius:22px;background:var(--grad);display:grid;place-items:center;font-size:27px;color:#fff;box-shadow:0 22px 50px -12px rgba(59,110,246,.75);transition:transform .2s;position:relative}
+#chatfab .fbtn:hover{transform:scale(1.07) rotate(-4deg)}
+#chatfab .fbtn::after{content:"";position:absolute;inset:-5px;border-radius:26px;border:2px solid rgba(58,231,207,.5);animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.3);opacity:0}}
+#chatp{position:fixed;bottom:106px;right:26px;z-index:2500;width:392px;max-width:calc(100vw - 32px);height:600px;max-height:calc(100vh - 140px);background:#fff;border-radius:28px;box-shadow:0 50px 120px -30px rgba(11,20,55,.6);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(26px) scale(.96);pointer-events:none;transition:.4s cubic-bezier(.2,.8,.25,1.1)}
+#chatp.open{opacity:1;transform:none;pointer-events:auto}
+.chead{background:var(--navy);padding:18px 20px;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden}
+.chead::after{content:"";position:absolute;width:170px;height:170px;right:-60px;top:-80px;border-radius:50%;background:var(--grad);opacity:.25;filter:blur(8px)}
+.chead .ca{width:44px;height:44px;border-radius:14px;background:var(--grad);display:grid;place-items:center;font-size:20px;flex:none;position:relative}
+.chead b{color:#fff;font-family:var(--kdisp);font-size:16px;font-weight:800;display:block;position:relative}
+.chead span{color:#7CF0DC;font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:6px;position:relative}
+.chead span::before{content:"";width:7px;height:7px;border-radius:50%;background:#3AE7CF;box-shadow:0 0 10px #3AE7CF}
+.chead .cx{margin-left:auto;width:34px;height:34px;border-radius:11px;background:rgba(255,255,255,.1);border:0;color:#fff;font-size:14px;cursor:pointer;position:relative}
+#clog{flex:1;overflow-y:auto;padding:18px 16px 10px;background:var(--bg);display:flex;flex-direction:column;gap:4px}
+#clog::-webkit-scrollbar{width:5px}
+#clog::-webkit-scrollbar-thumb{background:#cfd9ee;border-radius:8px}
+.cm{max-width:84%;padding:12px 15px;border-radius:17px;font-size:13.5px;line-height:1.55;font-weight:500;margin-bottom:9px;animation:cmin .35s cubic-bezier(.2,.75,.25,1) both;white-space:pre-line}
+@keyframes cmin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.cm.bot{background:#fff;border-bottom-left-radius:6px;box-shadow:var(--sh-sm);color:var(--ink)}
+.cm.bot b{color:var(--blue-deep)}
+.cm.usr{background:var(--blue);color:#fff;border-bottom-right-radius:6px;margin-left:auto}
+.cbtns{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 12px}
+.cqk{background:#fff;border:1.5px solid #d6e2f8;border-radius:999px;padding:9px 15px;font-family:inherit;font-size:12.5px;font-weight:800;color:var(--blue-deep);cursor:pointer;transition:.15s;box-shadow:0 6px 16px -10px rgba(37,84,230,.4)}
+.cqk:hover{background:var(--blue-soft);transform:translateY(-1px)}
+.cqk.go{background:var(--grad);color:#fff;border-color:transparent}
+.ctyping{display:inline-flex;gap:5px;background:#fff;border-radius:17px;border-bottom-left-radius:6px;padding:15px 17px;box-shadow:var(--sh-sm);margin-bottom:9px;width:fit-content}
+.ctyping i{width:7px;height:7px;border-radius:50%;background:#9db1d8;animation:tb .9s infinite}
+.ctyping i:nth-child(2){animation-delay:.15s}.ctyping i:nth-child(3){animation-delay:.3s}
+.cfoot{padding:12px 14px;background:#fff;border-top:1px solid var(--line);display:flex;gap:9px;align-items:center}
+.cfoot input{flex:1;border:1.6px solid var(--line);border-radius:14px;padding:13px 16px;font-family:inherit;font-size:13.5px;font-weight:600;outline:none;transition:.2s;min-width:0}
+.cfoot input:focus{border-color:var(--blue)}
+.cfoot button{width:46px;height:46px;border-radius:14px;border:0;background:var(--grad);display:grid;place-items:center;cursor:pointer;flex:none;transition:transform .15s;box-shadow:0 12px 24px -10px rgba(59,110,246,.7)}
+.cfoot button:hover{transform:scale(1.06)}
+@media(max-width:520px){#chatp{right:16px;bottom:96px}#chatfab{right:16px;bottom:20px}}
+.storebtn.cta{background:var(--grad);color:#fff;box-shadow:0 22px 50px -14px rgba(59,110,246,.65)}
+.storebtn.cta:hover{box-shadow:0 26px 60px -12px rgba(58,231,207,.6)}
+
+/* ══════════════════════════════════════════════════════════
+   AVIV × estilo Klarna — tipografía enorme, squircles, cero sombras
+   ══════════════════════════════════════════════════════════ */
+:root{
+  --kdisp:'Bricolage Grotesque',system-ui,sans-serif;
+  --ktext:'Inter',system-ui,-apple-system,sans-serif;
+  --paper:#F7F5F0;            /* off-white cálido, como Klarna */
+  --cream:#FFFDF8;
+  --soft-blue:#E4ECFF;
+  --soft-teal:#DFF7F1;
+  --soft-lilac:#EAE6FF;
+  --r-xl:36px; --r-lg:28px; --r-md:20px; --r-pill:999px;
+}
+body{font-family:var(--ktext);background:var(--paper);letter-spacing:-.011em}
+h1,h2,h3,h4,.num,.gt{font-family:var(--kdisp)!important}
+
+/* Titulares: gigantes, apretados, line-height casi 1 */
+h1,.hero h1{font-family:var(--kdisp)!important;font-weight:800!important;letter-spacing:-.045em!important;line-height:.94!important}
+.hero h1{font-size:clamp(42px,7.4vw,88px)!important}
+h2,.sec h2,.shead h2,.techband h2,.invband h2{font-family:var(--kdisp)!important;font-weight:800!important;letter-spacing:-.04em!important;line-height:.96!important;font-size:clamp(32px,5.4vw,62px)!important}
+h3{font-weight:700!important;letter-spacing:-.025em!important}
+p,li,.hp,.tlead,.invlead{font-family:var(--ktext);letter-spacing:-.005em}
+.hp,.shead p{font-size:clamp(16px,1.9vw,20px)!important;line-height:1.5!important}
+
+/* Kickers: pastilla plana, sin gradiente */
+.kick,.hkick,.tkick,.invkick,.aikick{background:#0B1437!important;color:#fff!important;border:none!important;border-radius:var(--r-pill)!important;padding:9px 16px!important;font-family:var(--kdisp)!important;font-weight:700!important;letter-spacing:.02em!important;text-transform:none!important;font-size:12.5px!important;box-shadow:none!important}
+
+/* Botones: píldora negra sólida, sin sombra, con rebote */
+.storebtn,.wbtn,.simbtn,.invbtn,.ncta,.cbtns button,.dlbtns a{border-radius:var(--r-pill)!important;box-shadow:none!important;font-family:var(--kdisp)!important;font-weight:700!important;letter-spacing:-.01em!important;transition:transform .16s cubic-bezier(.2,.9,.3,1.3),background .2s!important}
+.storebtn:hover,.wbtn:hover,.simbtn:hover,.invbtn:hover,.ncta:hover{transform:translateY(-2px) scale(1.02)!important}
+.storebtn.cta,.simbtn,.ncta,.wbtn,.invbtn:not(.ghost){background:#0B1437!important;background-image:none!important;color:#fff!important;border:none!important}
+.storebtn:not(.cta),.invbtn.ghost{background:transparent!important;border:1.5px solid #0B1437!important;color:#0B1437!important}
+
+/* Tarjetas: squircle, color plano, sin sombra */
+.stat,.fc,.pcard,.card,.q,.mvcard,.tfeat,.invstat,.simbox,.dlbox,.chatbox{border-radius:var(--r-lg)!important;box-shadow:none!important}
+.stat{background:var(--cream)!important;border:1px solid rgba(11,20,55,.08)!important;border-radius:var(--r-xl)!important;padding:30px 22px!important}
+.stat .num{font-family:var(--kdisp)!important;font-weight:800!important;letter-spacing:-.05em!important;font-size:clamp(34px,4.6vw,52px)!important;-webkit-text-fill-color:initial!important;background:none!important;color:#0B1437!important}
+.fc{background:var(--cream)!important;border:1px solid rgba(11,20,55,.08)!important;border-radius:var(--r-xl)!important;padding:32px 28px!important}
+.fc:nth-child(3n+1){background:var(--soft-blue)!important;border-color:transparent!important}
+.fc:nth-child(3n+2){background:var(--soft-teal)!important;border-color:transparent!important}
+.fc:nth-child(3n+3){background:var(--soft-lilac)!important;border-color:transparent!important}
+.fc .fi{font-size:30px!important;margin-bottom:12px!important}
+.fc h3{font-size:22px!important}
+.simbox,.dlbox,.chatbox{border-radius:var(--r-xl)!important;border:1px solid rgba(11,20,55,.08)!important;background:var(--cream)!important}
+.q{background:var(--cream)!important;border:1px solid rgba(11,20,55,.08)!important;margin-bottom:10px!important}
+.q button{font-family:var(--kdisp)!important;font-weight:700!important;font-size:17px!important;letter-spacing:-.02em!important}
+
+/* Gradiente de texto -> color plano (Klarna no usa degradados en texto) */
+.gt{background:none!important;-webkit-text-fill-color:initial!important;color:var(--blue)!important}
+.techband .gt,.invband .gt,.hero .gt{color:var(--teal)!important}
+
+/* Bandas oscuras: sin degradados radiales lavados, color sólido */
+.techband,.invband{background:#0B1437!important;border-radius:var(--r-xl)!important;margin:0 16px!important;border:none!important}
+.techband::before,.invband::before{display:none!important}
+.mvcard{background:rgba(255,255,255,.07)!important;border:none!important;border-radius:var(--r-lg)!important}
+.mvcard::before{display:none!important}
+.mvtag{font-family:var(--kdisp)!important}
+.tfeat{background:rgba(255,255,255,.07)!important;border:none!important;border-radius:var(--r-md)!important;padding:16px!important}
+
+/* Cintillo: negro sólido */
+.marq{background:#0B1437!important;border:none!important}
+.mtrack span{font-family:var(--kdisp)!important;font-weight:700!important;letter-spacing:.02em!important;text-transform:none!important;font-size:15px!important;color:rgba(255,255,255,.55)!important}
+
+/* Nav: pastilla flotante */
+nav,.nlinks{font-family:var(--kdisp)!important}
+.nlinks a{font-weight:600!important;letter-spacing:-.01em!important}
+
+/* Secciones más aireadas, como Klarna */
+.sec{padding:110px 0!important}
+
+/* Logotipo Aviv: misma tipografía y grosor que el resto (Bricolage 800) */
+.nlogo b,.wbrand b,.invlogo b,.fbrand b,footer .nlogo b{font-family:var(--kdisp)!important;font-weight:800!important;letter-spacing:-.045em!important;font-size:22px!important}
+#nav .nlogo b{background:none!important;-webkit-text-fill-color:initial!important;color:#fff!important}
+footer .nlogo b,.wbrand b,.invlogo b{background:none!important;-webkit-text-fill-color:initial!important;color:#fff!important}
+.nlogo .lg,.wbrand .lg{font-family:var(--kdisp)!important;font-weight:800!important}
+
+/* ═══ Imágenes (Nano Banana) ═══ */
+.fimg{width:calc(100% + 56px);margin:-32px -28px 18px;height:190px;object-fit:cover;border-radius:var(--r-xl) var(--r-xl) 0 0;display:block}
+.fc:has(.fimg){padding-top:0!important;overflow:hidden}
+.photoband{position:relative;margin:0 16px 90px;border-radius:var(--r-xl);overflow:hidden;min-height:min(64vw,520px);display:flex;align-items:center}
+.photoband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.photoband .pbtext{position:relative;z-index:2;padding:clamp(28px,5vw,64px);max-width:min(560px,60%)}
+.photoband h2{font-size:clamp(28px,4.6vw,54px)!important;color:#0B1437;margin-bottom:14px}
+.photoband p{color:#3A4468;font-size:clamp(15px,1.7vw,18px);max-width:34ch;margin-bottom:22px}
+.photoband .ncta{display:inline-block;padding:15px 28px;font-size:15px}
+@media(max-width:760px){
+  .photoband{min-height:auto;flex-direction:column}
+  .photoband img{position:relative;height:260px;object-position:70% 40%}
+  .photoband .pbtext{max-width:100%;background:var(--cream)}
+}
+.tav{width:54px;height:54px;border-radius:50%;object-fit:cover;margin-bottom:12px;display:block}
+.mvimg{width:100%;height:230px;object-fit:cover;border-radius:var(--r-lg);margin-bottom:16px;display:block}
+
+/* ═══ Carrusel de opiniones (Google) ═══ */
+.grate{display:inline-flex;align-items:center;gap:10px;background:var(--cream);border:1px solid rgba(11,20,55,.09);border-radius:var(--r-pill);padding:10px 18px;margin-top:18px;flex-wrap:wrap}
+.grate b{font-family:var(--kdisp);font-weight:800;font-size:19px;letter-spacing:-.03em}
+.grate .gr{font-size:12.5px;color:var(--muted);font-weight:600}
+.glogo{width:20px;height:20px;flex:none}
+.tslider{position:relative;margin-top:26px}
+.ttrack{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;scroll-behavior:smooth;scrollbar-width:none}
+.ttrack::-webkit-scrollbar{display:none}
+.tc{flex:0 0 min(380px,82vw);scroll-snap-align:start;background:var(--cream)!important;border:1px solid rgba(11,20,55,.09)!important;border-radius:var(--r-lg)!important;padding:26px 24px!important;box-shadow:none!important;display:flex;flex-direction:column}
+.tc:hover{transform:translateY(-3px)}
+.tc .thead{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.tc .strs{color:#F5B544;font-size:14px;letter-spacing:2px;margin:0}
+.tc p{font-size:15px;color:#28304D;font-weight:500;line-height:1.65;margin-bottom:22px;flex:1}
+.tc .who{display:flex;align-items:center;gap:12px}
+.tc .who img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
+.tc .who b{font-family:var(--kdisp);font-size:15px;font-weight:700;display:block;letter-spacing:-.02em}
+.tc .who span{font-size:12px;color:var(--muted);font-weight:600}
+.tnav{display:flex;gap:10px;justify-content:flex-end;margin-top:4px}
+.tarrow{width:46px;height:46px;border-radius:50%;border:1.5px solid #0B1437;background:transparent;color:#0B1437;font-size:17px;cursor:pointer;transition:.18s}
+.tarrow:hover{background:#0B1437;color:#fff;transform:scale(1.06)}
+
+/* Logo: solo la palabra Aviv (nunca flama + palabra juntas) */
+#nav .nlogo .lgimg,footer .nlogo .lgimg,.wbrand .lgimg,.nlogo .lg,.wbrand .lg{display:none!important}
+#nav .nlogo b{font-size:34px!important}
+footer .nlogo b,.wbrand b{font-size:28px!important}
+
+/* icono plano: sin glow */
+.nlogo .lgimg,.wbrand .lgimg,.invlogo img,.invart img{filter:none!important}
+
+/* Avivcito: burbuja plana con la flama */
+#chatfab .fbtn{background:transparent!important;box-shadow:none!important;border-radius:0!important;width:72px!important;height:72px!important;font-size:30px!important;color:#0B1437!important}
+#chatfab .fbtn img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 14px 26px rgba(11,20,55,.28))}
+#chatfab .fbtn::after{display:none!important}
+#chatfab .fbtn:hover{transform:scale(1.07) rotate(-4deg)}
+.chead .ca{background:transparent!important;border-radius:0!important;padding:0}
+.chead .ca img{width:100%;height:100%;object-fit:contain;display:block}
+.chead .ca::after{display:none!important}
+
+/* campo de estrellas: que cubra TODO el hero */
+#stars{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:2}
+
+/* ═══════════ MÓVIL: que nada se salga ni se recorte ═══════════ */
+html,body{max-width:100%;overflow-x:hidden}
+img,canvas,svg,video{max-width:100%}
+.fc{overflow:hidden}                      /* la foto de la tarjeta ya no desborda */
+
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  /* titulares: que no se corten ni se salgan palabras largas */
+  
+  .hero h1{font-size:clamp(34px,10.5vw,52px)!important;line-height:.98!important}
+  h2,.sec h2,.shead h2,.techband h2,.invband h2{font-size:clamp(26px,7.6vw,38px)!important}
+  .hero{padding:120px 0 70px!important}
+  .hgrid{grid-template-columns:1fr!important;gap:38px}
+
+  /* el celular del héroe: que quepa completo */
+  .hphone{transform:scale(.82);transform-origin:top center;margin:0 auto;max-width:100%}
+  .phone{width:min(300px,86vw)!important;height:auto!important;aspect-ratio:320/660}
+  .chip.c1,.chip.c2,.chip.c3{display:none!important}   /* las burbujas flotantes tapaban el texto */
+
+  /* tarjetas y rejillas: una columna */
+  .stats{grid-template-columns:1fr 1fr!important;margin-top:-30px!important;gap:12px}
+  .stat{padding:22px 14px!important;border-radius:24px!important}
+  .fgrid{grid-template-columns:1fr!important}
+  .tgrid,.invgrid{grid-template-columns:1fr!important;gap:30px!important}
+  .fc{padding:0!important}
+  .fc>*:not(.fimg){padding-left:24px;padding-right:24px}
+  .fc>*:last-child{padding-bottom:26px}
+  .fimg{width:100%!important;height:210px!important;margin:0 0 18px 0!important;border-radius:0!important}
+
+  /* bandas oscuras y foto: menos margen lateral */
+  .techband,.invband{margin:0 10px!important;padding:64px 0!important;border-radius:28px!important}
+  .photoband{margin:0 10px 60px!important;border-radius:28px!important}
+  .photoband .pbtext{padding:26px 22px!important}
+
+  /* carrusel de opiniones */
+  .tc{flex:0 0 86vw!important;padding:22px 20px!important}
+  .grate{padding:10px 14px!important;font-size:12px}
+
+  /* simulador: nada de anchos fijos, todo se acomoda */
+  .simbox{padding:0!important;border-radius:28px!important;grid-template-columns:1fr!important}
+  .simbox *{min-width:0}
+  .siml,.simr{padding:28px 20px!important;min-width:0!important}
+  .terms{flex-wrap:wrap!important;gap:8px!important}
+  .term{flex:1 1 calc(50% - 4px)!important}
+  .dlbox{padding:44px 20px!important;border-radius:28px!important}
+
+  /* menú: solo logo + botón (los enlaces ya se ocultan en móvil) */
+  #nav .nlogo b{font-size:26px!important}
+  .nlinks .ncta{padding:11px 18px!important;font-size:13.5px!important}
+
+  /* chat y botón flotante más chicos */
+  #chatfab{bottom:14px!important;right:12px!important}
+  #chatfab .fbtn{width:56px!important;height:56px!important}
+  #chatfab .flabel{display:none!important}
+  #chatp{width:calc(100vw - 24px)!important;right:12px!important;left:12px!important;max-width:none!important}
+
+  /* wizard de solicitud a pantalla completa */
+  .wstage{padding:16px!important}
+}
+@media(max-width:420px){
+  .stats{grid-template-columns:1fr!important}
+  .hero h1{font-size:clamp(30px,9.5vw,42px)!important}
+}
+
+/* ═══ Tipografía final: Bricolage SOLO en titulares y logo. Todo lo demás, Inter ═══ */
+body,p,span,small,b,strong,em,i,div,a,button,input,select,textarea,label,li,td,th,figcaption{font-family:var(--ktext)!important}
+h1,h2,h3,h4,h5,
+.nlogo b,.wbrand b,.invlogo b,.brand b,.brand .name,#gate h2{font-family:var(--kdisp)!important}
+
+/* ═══ Composición del texto: sin partir palabras ni dejar líneas huérfanas ═══ */
+html{-webkit-hyphens:none;hyphens:none}
+h1,h2,h3,h4,h5{
+  text-wrap:balance;              /* reparte el titular en líneas parejas, sin dejar una palabra sola */
+  overflow-wrap:break-word;       /* solo parte si una palabra no cabe de ninguna forma */
+  word-break:normal;
+  -webkit-hyphens:none;hyphens:none;
+}
+p,li,.lead,.lead2,.hp,.tlead,.invlead,.sub,.desc,.hint,.note,.disc,td,th,figcaption,blockquote{
+  text-wrap:pretty;               /* evita que la última línea quede con una sola palabra */
+  overflow-wrap:break-word;
+  word-break:normal;
+  -webkit-hyphens:none;hyphens:none;
+  orphans:2;widows:2;
+}
+/* botones, chips y etiquetas: nunca se parten a media frase */
+.btn,button,.kick,.hkick,.tkick,.invkick,.chip,.pill,.tag,.term,.storebtn,.ncta,.simbtn,.invbtn,.wbtn,.cost,.pri,.mvtag,.meta span{
+  overflow-wrap:normal;word-break:keep-all;
+}
+</style>
+<style>
+.legal a.staff{color:inherit;opacity:.35;text-decoration:none;font-size:11px;letter-spacing:.02em;transition:opacity .2s}
+.legal a.staff:hover{opacity:.9;text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="pbar"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="nlogo" href="#"><img class="lgimg" src="aviv-icono.png" alt="Aviv"><b>Aviv</b></a>
+    <div class="nlinks">
+      <a href="#simulador">Simulador</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#mision">Nosotros</a>
+      <a href="#inversionistas">Inversionistas</a>
+      <a class="ncta" href="#" onclick="wOpen();return false">Solicitar crédito</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap hgrid">
+    <div>
+      <span class="hkick"><span class="dot"></span> Crédito con evaluación inteligente</span>
+      <h1>Tu crédito, sin filas y <span class="gt">sin letras chiquitas.</span></h1>
+      <p class="hp">Solicita desde tu celular en 5 minutos y recibe respuesta en menos de 24 horas. En Aviv te evaluamos por tu situación real: justo, claro y a tu ritmo. <b style="color:#fff">Crecemos contigo.</b></p>
+      <div class="hbtns">
+        <a class="storebtn cta" href="#" onclick="wOpen();return false"><span class="si">🚀</span><span><small>En línea · 5 minutos</small><b>Solicitar mi crédito</b></span></a>
+        <a class="storebtn ghost" href="#simulador"><span class="si">📊</span><span><small>Sin registro · gratis</small><b>Simular mi crédito</b></span></a>
+      </div>
+      <div class="htrust">
+        <span>🔒 Datos cifrados</span>
+        <span>🇲🇽 Empresa mexicana</span>
+        <span>⚡ Respuesta en 24 horas</span>
+      </div>
+    </div>
+    <div class="hphone">
+      <div class="chip c1"><div class="ci">⚡</div><div><b>$25,000</b><small>aprobado hoy</small></div></div>
+      <div class="chip c2"><div class="ci">📈</div><div><b>+18 pts</b><small>tu score este mes</small></div></div>
+      <div class="chip c3"><div class="ci">💬</div><div><b>Aviv AI</b><small>te responde 24/7</small></div></div>
+      <div class="phone">
+        <div class="pscreen">
+          <div class="pnotch"></div>
+          <div class="pgreet"><div class="pav">👋</div><div><b>Hola 👋</b><span>Tu dinero, claro y a tu ritmo</span></div></div>
+          <div class="pcard"><p>Tu línea Aviv · disponible</p><div class="amt">$45,000</div><div class="bar"><i></i></div><div class="r"><span>de tu línea de $60,000</span><span>•••• 4821</span></div></div>
+          <div class="pring"><div class="ring"><b>720</b></div><div class="m"><b>Aviv Score</b><span>Estás sano 💚 Sigue pagando a tiempo para llegar a Excelente.</span></div></div>
+          <div class="pchat"><div class="ai">💬</div><p>Si adelantas <b>$2,150</b> este mes, ahorras <b>$480</b> en intereses. ¿Lo preparo?</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marq">
+  <div class="mtrack" id="mtrack">
+    <span><i>⚡</i> RESPUESTA EN 24 HORAS</span><span><i>🤖</i> EVALUACIÓN CON TECNOLOGÍA</span><span><i>🔒</i> SEGURIDAD BANCARIA</span><span><i>📱</i> 100% DESDE TU CELULAR</span><span><i>💬</i> ASESOR 24/7</span><span><i>🧾</i> SIN LETRAS CHIQUITAS</span><span><i>🇲🇽</i> HECHO EN MÉXICO</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- STATS -->
+  <div class="stats reveal">
+    <div class="stat"><span class="num" data-ct="5" data-suf=" min">5 min</span><span>de solicitud a respuesta</span></div>
+    <div class="stat"><span class="num" data-ct="60" data-pre="$" data-suf=",000">$60,000</span><span>línea de crédito máxima</span></div>
+    <div class="stat"><span class="num">24/7</span><span>asistente con IA a tu lado</span></div>
+    <div class="stat"><span class="num" data-ct="0">0</span><span>filas, papeleos y sucursales</span></div>
+  </div>
+
+  <!-- ═══ SIMULADOR ═══ -->
+  <section class="sec" id="simulador">
+    <div class="shead reveal">
+      <span class="kick">💸 Simula tu crédito</span>
+      <h2>Mira tu pago mensual <span class="gtd">antes de pedir.</span></h2>
+      <p>Mueve el monto, elige tu plazo y dinos cuánto ganas. Te decimos al instante si te queda holgado — sin registrarte y sin compromiso.</p>
+    </div>
+    <div class="simbox reveal">
+      <div class="siml">
+        <h3>Arma tu crédito</h3>
+        <p class="ss">Todo claro desde el principio, como debe ser.</p>
+        <div class="slab"><span>¿Cuánto necesitas?</span><output id="oamt">$25,000</output></div>
+        <input type="range" class="rng" id="ramt" min="5000" max="60000" step="1000" value="25000" oninput="calc()">
+        <div class="slab"><span>¿A cuántos meses?</span></div>
+        <div class="terms" id="terms">
+          <div class="term" data-m="6" onclick="setTerm(6)">6<small>meses</small></div>
+          <div class="term on" data-m="12" onclick="setTerm(12)">12<small>meses</small></div>
+          <div class="term" data-m="18" onclick="setTerm(18)">18<small>meses</small></div>
+          <div class="term" data-m="24" onclick="setTerm(24)">24<small>meses</small></div>
+        </div>
+        <div class="slab"><span>¿Cuánto ganas al mes?</span></div>
+        <div class="inc"><span>$</span><input type="number" id="rinc" value="15000" oninput="calc()"></div>
+      </div>
+      <div class="simr">
+        <p class="ql">Pagarías al mes</p>
+        <div class="qv" id="qcuota">$2,280</div>
+        <p class="qm" id="qplazo">12 pagos fijos · sin sorpresas</p>
+        <div class="ratio" id="qratio">Es el 15% de tu ingreso · te queda holgado ✅</div>
+        <div style="margin-top:18px">
+          <div class="skv"><span>Total a pagar</span><b id="qtotal">$27,360</b></div>
+          <div class="skv"><span>Te queda libre al mes</span><b id="qfree">$12,720</b></div>
+          <div class="skv"><span>Depósito</span><b>24 h ⚡</b></div>
+        </div>
+        <a class="simbtn" href="#" onclick="return startFromSim()">Continuar con mi solicitud →</a>
+        <p class="simnote">CAT promedio 45.9% informativo. Sujeto a aprobación de Aviv Score.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFICIOS ═══ -->
+  <!-- ═══ BANDA FOTO ═══ -->
+  <section class="photoband reveal">
+    <img src="hero-aviv.jpg" alt="Dueña de una florería solicitando su crédito desde el celular">
+    <div class="pbtext">
+      <h2>Desde tu negocio,<br>desde tu sala,<br>desde donde estés.</h2>
+      <p>Cinco minutos y tu solicitud queda hecha. Sin filas, sin cita, sin pedir permiso en el trabajo.</p>
+      <a class="ncta" href="#" onclick="wOpen();return false">Solicitar mi crédito</a>
+    </div>
+  </section>
+
+  <section class="sec" id="beneficios">
+    <div class="shead reveal">
+      <span class="kick">✦ Por qué Aviv</span>
+      <h2>Un crédito que sí <span class="gtd">está de tu lado.</span></h2>
+      <p>Nada de sucursales, papeleos ni respuestas que tardan semanas. Así se siente pedir crédito en 2026.</p>
+    </div>
+    <div class="fgrid">
+      <div class="fc reveal"><img class="fimg" src="benef-24h.jpg" alt="" loading="lazy"><div class="fi">⚡</div><h3>Respuesta en 24 horas</h3><p>Un analista revisa tu solicitud y te contestamos en menos de 24 horas. Nada de "vuelva la próxima semana".</p></div>
+      <div class="fc reveal"><img class="fimg" src="proceso-aviv.jpg" alt="" loading="lazy"><div class="fi">🤳</div><h3>Todo desde tu celular</h3><p>Solicitud, documentos, firma y pagos. Tu INE y una selfie bastan para verificarte — sin ir a ningún lado.</p></div>
+      <div class="fc reveal"><img class="fimg" src="benef-justa.jpg" alt="" loading="lazy"><div class="fi">⚖️</div><h3>Evaluación justa</h3><p>El Aviv Score te evalúa por quién eres hoy, no solo por tu pasado. Y siempre te explicamos el porqué.</p></div>
+      <div class="fc reveal"><img class="fimg" src="benef-claro.jpg" alt="" loading="lazy"><div class="fi">🧾</div><h3>Cero letras chiquitas</h3><p>Tu pago mensual, tu CAT y tu total a pagar, visibles desde antes de pedir. Lo que ves es lo que pagas.</p></div>
+      <div class="fc reveal"><img class="fimg" src="benef-crecer.jpg" alt="" loading="lazy"><div class="fi">📈</div><h3>Tu score crece contigo</h3><p>Cada pago puntual sube tu Aviv Score y desbloquea líneas más grandes y mejores condiciones.</p></div>
+      <div class="fc reveal"><img class="fimg" src="benef-seguro.jpg" alt="" loading="lazy"><div class="fi">🔒</div><h3>Seguridad bancaria</h3><p>Tus datos viajan cifrados de extremo a extremo y tu información nunca se vende. Punto.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap">
+  <!-- ═══ TESTIMONIOS ═══ -->
+  <section class="sec" id="opiniones">
+    <div class="shead reveal">
+      <span class="kick">💙 Historias reales</span>
+      <h2>A miles de mexicanos <span class="gtd">ya les cambió el juego.</span></h2>
+      <div class="grate"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><b>4.8</b><span class="strs">★★★★★</span><span class="gr">Basado en 1,284 opiniones en Google</span></div>
+    </div>
+
+    <div class="tslider">
+      <div class="ttrack" id="ttrack">
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Pedí $18,000 para surtir mi papelería un viernes por la tarde. Al día siguiente ya tenía el dinero. Nunca pisé una sucursal."</p><div class="who"><img src="avatar-03.jpg" alt="" loading="lazy"><div><b>María G.</b><span>Comerciante · Guadalajara</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Lo que más me gustó: me dijeron mi pago mensual ANTES de darles un solo dato. Y el asistente de verdad responde, no es un menú."</p><div class="who"><img src="avatar-07.jpg" alt="" loading="lazy"><div><b>Jorge R.</b><span>Repartidor · CDMX</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Otras apps me rechazaron por no tener historial. Aviv me evaluó con mis ingresos reales y empecé con $8,000. Hoy mi línea es de $30,000."</p><div class="who"><img src="avatar-09.jpg" alt="" loading="lazy"><div><b>Ana L.</b><span>Estilista · Monterrey</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Me explicaron el CAT sin que yo preguntara. Sabía exactamente cuánto iba a pagar en total desde el primer día."</p><div class="who"><img src="avatar-01.jpg" alt="" loading="lazy"><div><b>Rocío M.</b><span>Estética · Puebla</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Tengo 58 años y no soy de apps. Aun así lo hice solo desde el celular, y cuando me atoré me contestaron por correo el mismo día."</p><div class="who"><img src="avatar-04.jpg" alt="" loading="lazy"><div><b>Don Beto</b><span>Tortillería · Toluca</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Me atrasé un mes y en lugar de amenazarme me llamaron a preguntar qué había pasado. Me movieron la fecha. Eso no lo hace nadie."</p><div class="who"><img src="avatar-08.jpg" alt="" loading="lazy"><div><b>Karen S.</b><span>Farmacia · Mérida</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Adelanté dos pagos y me bajaron los intereses sin cobrarme penalización. Justo como lo decía la página."</p><div class="who"><img src="avatar-06.jpg" alt="" loading="lazy"><div><b>Luis A.</b><span>Taller mecánico · León</span></div></div></article>
+        <article class="tc"><div class="thead"><svg class="glogo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2.5 24 .5 14.6.5 6.5 5.9 2.6 13.8l7.8 6.1C12.3 14 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.6 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.7c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.2-10.2 7.2-17.6z"/><path fill="#FBBC05" d="M10.4 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-7.8-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 47.5c6.2 0 11.5-2 15.3-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.7 2.3-6.4 0-11.7-4.5-13.6-10.4l-7.8 6.1C6.5 42.1 14.6 47.5 24 47.5z"/></svg><span class="strs">★★★★★</span></div><p>"Cinco minutos llenando la solicitud y al otro día tenía respuesta. Sin ir a ningún lado, sin fiador, sin vueltas."</p><div class="who"><img src="avatar-10.jpg" alt="" loading="lazy"><div><b>Sergio V.</b><span>Cerrajería · Querétaro</span></div></div></article>
+      </div>
+      <div class="tnav">
+        <button class="tarrow" onclick="tScroll(-1)" aria-label="Anterior">←</button>
+        <button class="tarrow" onclick="tScroll(1)" aria-label="Siguiente">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="sec" id="faq">
+    <div class="shead reveal">
+      <span class="kick">❓ Preguntas frecuentes</span>
+      <h2>Todo claro, <span class="gtd">como nos gusta.</span></h2>
+    </div>
+    <div class="faq reveal">
+      <div class="q"><button onclick="fq(this)">¿Qué necesito para pedir un crédito?<span class="ar">+</span></button><div class="a"><p>Solo tres cosas: tu INE vigente, un comprobante de ingresos (recibo de nómina o estado de cuenta) y tu celular para tomarte una selfie. Todo se sube desde la app en unos minutos.</p></div></div>
+      <div class="q"><button onclick="fq(this)">¿En cuánto tiempo me responden?<span class="ar">+</span></button><div class="a"><p>Revisamos tu solicitud en cuanto la envías. En la mayoría de los casos tienes respuesta en menos de <b>24 horas</b>, y si se autoriza, el depósito llega el mismo día a tu cuenta.</p></div></div>
+      <div class="q"><button onclick="fq(this)">¿Consultan Buró de Crédito? ¿Y si no tengo historial?<span class="ar">+</span></button><div class="a"><p>Sí, con tu autorización consultamos Buró — es un requisito legal. Pero el Aviv Score también toma en cuenta tus ingresos y tu situación actual, así que no tener historial no te descarta automáticamente.</p></div></div>
+      <div class="q"><button onclick="fq(this)">¿Cuánto me pueden prestar?<span class="ar">+</span></button><div class="a"><p>Las líneas van de $5,000 a $60,000 MXN, a plazos de 6 a 24 meses. Empiezas con un monto inicial y crece conforme pagas a tiempo y sube tu Aviv Score.</p></div></div>
+      <div class="q"><button onclick="fq(this)">¿Qué pasa si me atraso en un pago?<span class="ar">+</span></button><div class="a"><p>Te avisamos antes de tu fecha de pago para que no se te pase. Si algo se complica, escríbele a Aviv AI o a nuestro equipo: siempre hay opciones antes de generar cargos. Preferimos ayudarte a que te pongas al corriente.</p></div></div>
+      <div class="q"><button onclick="fq(this)">¿Mis datos están seguros?<span class="ar">+</span></button><div class="a"><p>Sí. Tu información viaja cifrada de extremo a extremo, se usa únicamente para evaluar y operar tu crédito, y nunca se vende a terceros. Puedes consultar nuestro aviso de privacidad dentro de la app.</p></div></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══ INVERSIONISTAS ═══ -->
+<style>
+.invband{background:radial-gradient(1000px 560px at 82% -14%,#1b2f78 0%,transparent 58%),radial-gradient(760px 480px at -8% 116%,#0f3d38 0%,transparent 55%),var(--navy);color:#fff;padding:96px 0;position:relative;overflow:hidden}
+.invband .wrap{position:relative;z-index:2}
+.invgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:center}
+.invkick{display:inline-flex;align-items:center;gap:8px;font-family:var(--kdisp);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7FE9D6;background:rgba(127,233,214,.1);border:1px solid rgba(127,233,214,.24);padding:8px 14px;border-radius:100px}
+.invlogo{display:flex;align-items:center;gap:11px;margin:20px 0 4px}
+.invlogo img{width:38px;height:auto;filter:drop-shadow(0 6px 18px rgba(58,231,207,.5))}
+.invlogo b{font-family:var(--kdisp)!important;font-weight:800;font-size:22px;letter-spacing:-.4px}
+.invband h2{font-size:clamp(28px,4.4vw,48px);font-weight:800;letter-spacing:-1.6px;line-height:1.05;margin:12px 0 14px;max-width:17ch}
+.invband p.invlead{color:#C7D0E6;font-size:clamp(15px,1.7vw,18px);line-height:1.6;max-width:56ch}
+.invstats{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 28px}
+.invstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:14px 18px}
+.invstat b{display:block;font-family:var(--kdisp);font-size:22px;font-weight:800;background:var(--grad-h);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.invstat span{font-size:12px;color:#9BA6C4}
+.invbtns{display:flex;gap:13px;flex-wrap:wrap}
+.invbtn{display:inline-flex;align-items:center;gap:9px;background:var(--grad);color:#fff;font-family:var(--kdisp);font-weight:800;font-size:15px;padding:15px 24px;border-radius:14px;text-decoration:none;box-shadow:0 20px 44px -14px rgba(59,110,246,.7);transition:transform .15s}
+.invbtn:hover{transform:translateY(-2px)}
+.invbtn.ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);box-shadow:none}
+.invph{color:#8fd9cc;border-bottom:1.5px dashed rgba(143,217,204,.5);white-space:nowrap}
+.invart{display:grid;place-items:center}
+.invart img{width:min(260px,78%);height:auto;filter:drop-shadow(0 30px 62px rgba(58,231,207,.45))}
+@media(max-width:820px){.invgrid{grid-template-columns:1fr;gap:26px}.invart{order:-1}}
+</style>
+<style>
+.techband{background:#0d1740;color:#fff;padding:96px 0;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+.techband::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 520px at 12% -18%,#16255e 0%,transparent 58%),radial-gradient(760px 480px at 108% 118%,#0f3d38 0%,transparent 55%)}
+.techband .wrap{position:relative;z-index:2}
+.tgrid{display:grid;grid-template-columns:1fr .95fr;gap:52px;align-items:center}
+.tkick{display:inline-flex;align-items:center;gap:8px;font-family:var(--kdisp);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8FB0FF;background:rgba(90,120,255,.12);border:1px solid rgba(120,150,255,.26);padding:8px 14px;border-radius:100px}
+.techband h2{font-size:clamp(28px,4.4vw,46px);font-weight:800;letter-spacing:-1.6px;line-height:1.06;margin:18px 0 14px;max-width:18ch}
+.techband p.tlead{color:#C7D0E6;font-size:clamp(15px,1.7vw,17.5px);line-height:1.65;max-width:54ch}
+.tfeats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px 0 30px}
+.tfeat{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 14px;font-size:13px;color:#C7D0E6;line-height:1.45}
+.tfeat b{color:#fff;display:block;font-size:13.5px}
+.mvcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:26px 26px 24px;margin-bottom:16px;position:relative;overflow:hidden}
+.mvcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--grad)}
+.mvcard.alt{background:rgba(255,255,255,.03)}
+.mvtag{display:inline-block;font-family:var(--kdisp);font-weight:800;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#7FE9D6;margin-bottom:10px}
+.mvcard h3{font-size:clamp(18px,2.2vw,22px);font-weight:800;letter-spacing:-.6px;line-height:1.25;color:#fff;margin:0 0 10px}
+.mvcard p{color:#C7D0E6;font-size:14.5px;line-height:1.6;margin:0}
+.tmock{background:rgba(13,20,50,.85);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:20px;box-shadow:0 40px 90px -30px rgba(0,0,0,.75);backdrop-filter:blur(8px);transform:rotate(1.3deg)}
+.tmock .mtop{display:flex;align-items:center;gap:8px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:14px;font-family:var(--kdisp);font-weight:800;font-size:13px}
+.tmock .mtop img{width:22px}
+.tmock .mtop span{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.1em;color:#7FE9D6;background:rgba(127,233,214,.12);border:1px solid rgba(127,233,214,.25);padding:4px 10px;border-radius:99px}
+.mkpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.mkpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:11px 13px}
+.mkpi b{display:block;font-family:var(--kdisp);font-size:17px;background:var(--grad-h);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.mkpi span{font-size:10px;color:#9BA6C4;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.mrow{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:9px 12px;margin-bottom:8px;font-size:12px;color:#C7D0E6}
+.mrow .md{width:8px;height:8px;border-radius:50%;flex:none}
+.mrow b{color:#fff}
+.mrow .mc{margin-left:auto;font-weight:800;font-size:11px}
+@media(max-width:860px){.tgrid{grid-template-columns:1fr}.tmock{transform:none}}
+</style>
+<section class="techband" id="mision">
+  <div class="wrap">
+    <div class="tgrid">
+      <div class="reveal">
+        <span class="tkick">✦ Quiénes somos</span>
+        <h2>Crédito con <span class="gt">respeto</span>, no con letras chiquitas.</h2>
+        <p class="tlead">Nacimos porque pedir prestado en México se siente como pedir un favor: filas, papeleo, respuestas tibias y costos que nadie te explica. Aviv existe para lo contrario — decirte que sí o que no con claridad, a tiempo, y acompañarte hasta el último pago.</p>
+        <div class="tfeats">
+          <div class="tfeat">🤝<div><b>Trato de persona</b>Detrás de cada solicitud hay alguien que la revisa, no un muro.</div></div>
+          <div class="tfeat">🔍<div><b>Todo a la vista</b>Tasa, cuota, CAT y comisiones antes de que firmes.</div></div>
+          <div class="tfeat">📈<div><b>Crecemos contigo</b>Cada pago puntual te abre más línea y mejores condiciones.</div></div>
+          <div class="tfeat">💙<div><b>Contigo en lo difícil</b>Si algo se complica, avísanos: hay opciones antes de la mora.</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <img class="mvimg" src="mision-aviv.jpg" alt="Asesora de Aviv escuchando a una clienta" loading="lazy">
+        <div class="mvcard">
+          <span class="mvtag">Misión</span>
+          <h3>Dar crédito justo, claro y a tiempo a las personas que el sistema tradicional deja fuera.</h3>
+          <p>Evaluamos tu situación real —no solo tu historial— y te damos una respuesta en menos de 24 horas, con condiciones que entiendes desde el primer momento.</p>
+        </div>
+        <div class="mvcard alt">
+          <span class="mvtag">Visión</span>
+          <h3>Ser la financiera en la que los mexicanos confían para dar su siguiente paso.</h3>
+          <p>Que pedir un crédito deje de dar miedo: un lugar donde el cliente entiende lo que firma, mejora sus condiciones con el tiempo y regresa por decisión, no por falta de opciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="invband" id="inversionistas">
+  <div class="wrap">
+    <div class="invgrid">
+      <div class="reveal">
+        <span class="invkick">✦ Para inversionistas</span>
+        <h2>¿Eres inversionista? Construyamos el <span class="gt">futuro del crédito.</span></h2>
+        <p class="invlead">Somos una financiera mexicana que usa tecnología para dar crédito justo, claro y 100% digital. Ya validamos el producto — ahora abrimos ronda para escalar la cartera y llegar a más personas.</p>
+        <div class="invstats">
+          <div class="invstat"><b>100%</b><span>digital, sin sucursales</span></div>
+          <div class="invstat"><b>Score</b><span>evaluación con Aviv Score</span></div>
+          <div class="invstat"><b>Balance propio</b><span>modelo financiero eficiente</span></div>
+        </div>
+        <div class="invbtns">
+          <a class="invbtn" href="aviv-inversionistas.html">Conoce la oportunidad →</a>
+          <a class="invbtn ghost" href="mailto:inversionistas@aviv.mx">Escríbenos</a>
+        </div>
+      </div>
+      <div class="invart reveal"><img src="aviv-icono-claro.png" alt="Aviv"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="fgridf">
+      <div class="fbrand">
+        <a class="nlogo" href="#"><img class="lgimg" src="aviv-icono.png" alt="Aviv"><b>Aviv</b></a>
+        <p>Crédito inteligente, claro y a tu ritmo. Una financiera mexicana con tecnología que te evalúa distinto. Crecemos contigo.</p>
+      </div>
+      <div class="fcol"><b>Producto</b><a href="#simulador">Simulador</a><a href="#beneficios">Beneficios</a><a href="#inversionistas">Inversionistas</a><a href="#" onclick="wOpen();return false">Solicitar crédito</a></div>
+      <div class="fcol"><b>Aviv</b><a href="#mision">Misión y visión</a><a href="#faq">Seguridad de tus datos</a></div>
+      <div class="fcol"><b>Ayuda</b><a href="#faq">Preguntas frecuentes</a><a href="mailto:hola@aviv.mx">hola@aviv.mx</a><a href="#">WhatsApp</a></div>
+      <div class="fcol"><b>Legal</b><a href="#">Aviso de privacidad</a><a href="#">Términos y condiciones</a><a href="#">Costos y comisiones</a><a href="#">UNE de atención</a></div>
+    </div>
+    <div class="legal">
+      <b>Aviv</b> · Hecho en México 🇲🇽 · <a class="staff" href="aviv-crm.html" title="Acceso para el equipo Aviv">Acceso equipo</a><br>
+      CAT promedio 45.9% sin IVA, informativo. Fecha de cálculo: julio 2026. Montos de $5,000 a $60,000 MXN a plazos de 6 a 24 meses. La aprobación y condiciones finales están sujetas a la evaluación del Aviv Score. Incumplir tus obligaciones te puede generar comisiones e intereses moratorios. Contratar créditos por arriba de tu capacidad de pago puede afectar tu historial crediticio.
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════ WIZARD DE SOLICITUD ═══════════ -->
+<div id="wiz" role="dialog" aria-label="Solicitud de crédito">
+  <div class="wprog" id="wprog"></div>
+  <div class="wtop">
+    <div class="wbrand"><img class="lgimg" src="aviv-icono.png" alt="Aviv"><b>Aviv</b></div>
+    <button class="wclose" onclick="wClose()" title="Guardar y salir">✕</button>
+  </div>
+  <div class="smstoast" id="smstoast"><div class="si">📧</div><div><b>Correo de Aviv</b><span>Tu código de verificación es: <em id="smscode">····</em></span></div></div>
+  <div class="wstage">
+
+    <div class="wstep" data-ws="nombre">
+      <p class="wq"><span class="n">1</span> Empecemos por lo importante</p>
+      <h2>¿Cómo te llamas?</h2>
+      <p class="wh">Queremos hablarte por tu nombre, como debe ser.</p>
+      <input class="winp" id="f_nombre" placeholder="Escribe tu nombre completo" autocomplete="name">
+      <p class="werr" id="e_nombre"></p>
+      <div class="wnav"><button class="wbtn" onclick="wNext()">Continuar →</button><span class="wenter">o presiona <b>Enter ↵</b></span></div>
+    </div>
+
+    <div class="wstep" data-ws="monto">
+      <p class="wq"><span class="n">2</span> Tu crédito</p>
+      <h2 id="h_monto">¿Cuánto necesitas?</h2>
+      <div class="wamt" id="w_amt">$25,000</div>
+      <input type="range" class="wrng" id="f_monto" min="5000" max="60000" step="1000" value="25000" oninput="wAmt()">
+      <div class="wminmax"><span>$5,000</span><span>$60,000</span></div>
+      <p class="wlive" id="w_amtlive">Buena elección 👌 monto muy solicitado</p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="plazo">
+      <p class="wq"><span class="n">3</span> Tu crédito</p>
+      <h2>¿A cuántos meses lo quieres pagar?</h2>
+      <p class="wh">Más meses = pago mensual más pequeño.</p>
+      <div class="wchips">
+        <div class="wchip" data-v="6" onclick="wPick(this,'plazo')"><span class="we">🐇</span><span>6 meses<br><small style="opacity:.55;font-size:11.5px">terminas rapidísimo</small></span></div>
+        <div class="wchip on" data-v="12" onclick="wPick(this,'plazo')"><span class="we">⚖️</span><span>12 meses<br><small style="opacity:.55;font-size:11.5px">el favorito · equilibrado</small></span></div>
+        <div class="wchip" data-v="18" onclick="wPick(this,'plazo')"><span class="we">🌱</span><span>18 meses<br><small style="opacity:.55;font-size:11.5px">pago más ligero</small></span></div>
+        <div class="wchip" data-v="24" onclick="wPick(this,'plazo')"><span class="we">🪶</span><span>24 meses<br><small style="opacity:.55;font-size:11.5px">el más ligerito</small></span></div>
+      </div>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="proposito">
+      <p class="wq"><span class="n">4</span> Cuéntanos más</p>
+      <h2 id="h_prop">¿Para qué lo vas a usar?</h2>
+      <p class="wh">No cambia tu aprobación — nos ayuda a darte mejores consejos.</p>
+      <div class="wchips">
+        <div class="wchip" data-v="Mi negocio" onclick="wPick(this,'proposito')"><span class="we">🏪</span> Mi negocio</div>
+        <div class="wchip" data-v="Gastos personales" onclick="wPick(this,'proposito')"><span class="we">🛋️</span> Gastos personales</div>
+        <div class="wchip" data-v="Salud" onclick="wPick(this,'proposito')"><span class="we">🏥</span> Salud</div>
+        <div class="wchip" data-v="Educación" onclick="wPick(this,'proposito')"><span class="we">🎓</span> Educación</div>
+        <div class="wchip" data-v="Pagar deudas" onclick="wPick(this,'proposito')"><span class="we">🔄</span> Pagar deudas</div>
+        <div class="wchip" data-v="Otro" onclick="wPick(this,'proposito')"><span class="we">✨</span> Otro</div>
+      </div>
+      <p class="werr" id="e_proposito"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="ingreso">
+      <p class="wq"><span class="n">5</span> Tu capacidad</p>
+      <h2>¿Cuánto ganas al mes?</h2>
+      <p class="wh">Aproximado está bien. Es para asegurarnos de que tu pago te quede cómodo. 🔒 Nadie más lo ve.</p>
+      <input class="winp" id="f_ingreso" type="number" inputmode="numeric" placeholder="$ 15,000">
+      <p class="wlive" id="w_inclive" style="text-align:left"></p>
+      <p class="werr" id="e_ingreso"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button><span class="wenter"><b>Enter ↵</b></span></div>
+    </div>
+
+    <div class="wstep" data-ws="ocupacion">
+      <p class="wq"><span class="n">6</span> Tu capacidad</p>
+      <h2>¿A qué te dedicas?</h2>
+      <div class="wchips">
+        <div class="wchip" data-v="Empleado(a)" onclick="wPick(this,'ocupacion')"><span class="we">💼</span> Empleado(a)</div>
+        <div class="wchip" data-v="Negocio propio" onclick="wPick(this,'ocupacion')"><span class="we">🏪</span> Negocio propio</div>
+        <div class="wchip" data-v="Independiente / freelance" onclick="wPick(this,'ocupacion')"><span class="we">💻</span> Independiente</div>
+        <div class="wchip" data-v="Otro" onclick="wPick(this,'ocupacion')"><span class="we">✨</span> Otro</div>
+      </div>
+      <p class="werr" id="e_ocupacion"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="oferta">
+      <p class="wq"><span class="n">7</span> Tu plan</p>
+      <h2 id="h_oferta">Así quedaría tu crédito:</h2>
+      <div class="woffer">
+        <p class="ol">Pagarías al mes</p>
+        <div class="ov" id="w_cuota">$2,280</div>
+        <p class="om" id="w_ratio">Es el 15% de tu ingreso · te queda holgado ✅</p>
+        <div class="wkvs">
+          <div class="wkv"><small>MONTO</small><b id="w_omonto">$25,000</b></div>
+          <div class="wkv"><small>PLAZO</small><b id="w_oplazo">12 meses</b></div>
+          <div class="wkv"><small>TOTAL</small><b id="w_ototal">$27,360</b></div>
+        </div>
+      </div>
+      <p class="wh" style="margin:14px 0 0;font-size:12px">CAT promedio 45.9% informativo · pagos fijos, sin sorpresas ni letras chiquitas.</p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Ajustar</button><button class="wbtn" onclick="wNext()">Me late, continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="email">
+      <p class="wq"><span class="n">8</span> Crea tu cuenta</p>
+      <h2 id="h_email">Va perfecto. ¿Cuál es tu correo?</h2>
+      <p class="wh">Aquí te mandamos el estatus de tu solicitud.</p>
+      <input class="winp" id="f_email" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+      <p class="werr" id="e_email"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button><span class="wenter"><b>Enter ↵</b></span></div>
+    </div>
+
+    <div class="wstep" data-ws="celular">
+      <p class="wq"><span class="n">9</span> Crea tu cuenta</p>
+      <h2>¿Y tu número de celular?</h2>
+      <p class="wh">Te enviaremos un código para confirmar que eres tú.</p>
+      <input class="winp" id="f_celular" type="tel" inputmode="numeric" placeholder="55 1234 5678" autocomplete="tel">
+      <p class="werr" id="e_celular"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Enviar código 📲</button></div>
+    </div>
+
+    <div class="wstep" data-ws="codigo">
+      <p class="wq"><span class="n">10</span> Verificación</p>
+      <h2>Escribe el código que te enviamos</h2>
+      <p class="wh" id="w_codemsg">Lo mandamos por correo. 👀 Míralo arriba.</p>
+      <div class="wcode">
+        <input maxlength="1" inputmode="numeric" id="c1"><input maxlength="1" inputmode="numeric" id="c2"><input maxlength="1" inputmode="numeric" id="c3"><input maxlength="1" inputmode="numeric" id="c4">
+      </div>
+      <p class="werr" id="e_codigo"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Verificar →</button><button class="wback" onclick="sendSms()" style="font-size:12.5px">Reenviar código</button></div>
+    </div>
+
+    <div class="wstep" data-ws="password">
+      <p class="wq"><span class="n">11</span> Crea tu cuenta</p>
+      <h2>Crea tu contraseña</h2>
+      <p class="wh">Mínimo 8 caracteres. Con esto entrarás a tu cuenta Aviv.</p>
+      <input class="winp" id="f_password" type="password" placeholder="••••••••" autocomplete="new-password">
+      <p class="wlive" id="w_pwlive" style="text-align:left"></p>
+      <p class="werr" id="e_password"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Crear mi cuenta ✓</button><span class="wenter"><b>Enter ↵</b></span></div>
+    </div>
+
+    <div class="wstep" data-ws="docs">
+      <p class="wq"><span class="n">12</span> Último tramo</p>
+      <h2 id="h_docs">Sube tus documentos</h2>
+      <p class="wh">Toca cada uno para subirlo. Fotos claras y sin reflejos. 📸</p>
+      <div class="wdocs">
+        <div class="wdoc" data-k="ine_f" onclick="wDoc(this)"><div class="di">🪪</div><div class="dm"><b>INE / IFE — frente</b><span>Tu identificación oficial</span><div class="dbar"><i></i></div></div><span class="dst">Subir</span></div>
+        <div class="wdoc" data-k="ine_r" onclick="wDoc(this)"><div class="di">🪪</div><div class="dm"><b>INE / IFE — reverso</b><span>Que se lea el código de barras</span><div class="dbar"><i></i></div></div><span class="dst">Subir</span></div>
+        <div class="wdoc" data-k="ingreso" onclick="wDoc(this)"><div class="di">💵</div><div class="dm"><b>Comprobante de ingresos</b><span>Nómina o estado de cuenta reciente</span><div class="dbar"><i></i></div></div><span class="dst">Subir</span></div>
+      </div>
+      <p class="werr" id="e_docs"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Continuar →</button></div>
+    </div>
+
+    <div class="wstep" data-ws="buro">
+      <p class="wq"><span class="n">13</span> Autorización</p>
+      <h2>Una firma de confianza</h2>
+      <p class="wh">Para darte una respuesta necesitamos tu autorización. Es un requisito legal y tus datos siguen protegidos.</p>
+      <div class="wcons" id="w_cons" onclick="this.classList.toggle('on')">
+        <div class="box"></div>
+        <p><b>Autorizo a Aviv a consultar mi historial en Buró de Crédito</b> con el único fin de evaluar esta solicitud. Entiendo que es una consulta puntual y que mis datos están protegidos por el aviso de privacidad.</p>
+      </div>
+      <p class="werr" id="e_buro"></p>
+      <div class="wnav"><button class="wback" onclick="wBack()">← Atrás</button><button class="wbtn" onclick="wNext()">Enviar mi solicitud 🚀</button></div>
+    </div>
+
+    <div class="wstep" data-ws="analisis">
+      <p class="wq"><span class="n">⚡</span> Nuestro motor de IA está trabajando</p>
+      <h2 id="h_ana">Analizando tu solicitud…</h2>
+      <p class="wh">Esto normalmente toma menos de un minuto. No cierres la ventana.</p>
+      <div class="wai">
+        <div class="wail" id="a1"><div class="ic">🪪</div><div><b>Verificando tu identidad</b><span>Validando tus documentos</span></div><div class="st"><span class="sp"></span><span class="ck">✓</span></div></div>
+        <div class="wail" id="a2"><div class="ic">🏦</div><div><b>Consultando Buró de Crédito</b><span>Con tu autorización</span></div><div class="st"><span class="sp"></span><span class="ck">✓</span></div></div>
+        <div class="wail" id="a3"><div class="ic">🧮</div><div><b>Calculando tu Aviv Score</b><span>Evaluación justa y explicable</span></div><div class="st"><span class="sp"></span><span class="ck">✓</span></div></div>
+        <div class="wail" id="a4"><div class="ic">🛡️</div><div><b>Revisión de seguridad</b><span>Protegiendo tu identidad</span></div><div class="st"><span class="sp"></span><span class="ck">✓</span></div></div>
+        <div class="wail" id="a5"><div class="ic">🎁</div><div><b>Preparando tu oferta</b><span>Personalizada para ti</span></div><div class="st"><span class="sp"></span><span class="ck">✓</span></div></div>
+      </div>
+    </div>
+
+    <div class="wstep" data-ws="aprobado">
+      <div class="wdone"><div class="wbig">🎉</div></div>
+      <h2 style="text-align:center" id="h_apr">¡Felicidades! Estás pre-aprobado</h2>
+      <p class="wh" style="text-align:center" id="w_aprmsg">Tu solicitud pasó la evaluación inicial. Esta es tu oferta:</p>
+      <div class="woffer">
+        <p class="ol">Línea pre-aprobada</p>
+        <div class="ov" id="w_amonto">$25,000</div>
+        <p class="om" id="w_adet">12 pagos de $2,280 · CAT 45.9%</p>
+      </div>
+      <div class="wsign" style="margin-top:16px">
+        <input id="f_firma" placeholder="Escribe tu nombre para firmar">
+        <small>✍️ Al escribir tu nombre aceptas la oferta y los términos.</small>
+      </div>
+      <p class="werr" id="e_firma"></p>
+      <div class="wnav" style="justify-content:center"><button class="wbtn" onclick="wNext()">Firmar y aceptar mi crédito ✓</button></div>
+    </div>
+
+    <div class="wstep wdone" data-ws="done">
+      <div class="wbig">💙</div>
+      <h2 id="h_done">¡Listo! Tu dinero va en camino</h2>
+      <p class="wh" style="max-width:460px;margin:0 auto 6px">Recibimos tu solicitud firmada. Nuestro equipo hará la validación final y te avisaremos por correo.</p>
+      <div class="wtimeline">
+        <div class="wtl ok"><div class="d">✓</div><div><b>Solicitud enviada y firmada</b><span id="w_dnow">hoy</span></div></div>
+        <div class="wtl act"><div class="d">2</div><div><b>Validación final</b><span>Menos de 24 horas</span></div></div>
+        <div class="wtl"><div class="d">3</div><div><b>Depósito a tu cuenta</b><span>Te pediremos tu CLABE de forma segura</span></div></div>
+      </div>
+      <div class="wnav" style="justify-content:center"><button class="wbtn" onclick="wClose()">Entendido, gracias 💙</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ CHATBOT ═══════════ -->
+<div id="chatfab" onclick="chatToggle()">
+  <span class="flabel" id="flabel">¿Tienes dudas? Pregúntame 👋</span>
+  <span class="fbtn" id="fbtnic"><img src="avivcito.png" alt="Avivcito"></span>
+</div>
+<div id="chatp">
+  <div class="chead">
+    <div class="ca"><img src="avivcito.png" alt=""></div>
+    <div><b>Avivcito</b><span>asistente con IA · en línea</span></div>
+    <button class="cx" onclick="chatToggle()">✕</button>
+  </div>
+  <div id="clog"></div>
+  <div class="cfoot">
+    <input id="cinp" placeholder="Escríbeme, yo te ayudo…" autocomplete="off">
+    <button onclick="chatSend()" title="Enviar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#fff" stroke-width="2.2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+</div>
+
+<script>
+/* nav */
+var nav=document.getElementById('nav');
+var lastY=window.scrollY||0;
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  nav.classList.toggle('solid',y>40);
+  if(y>lastY&&y>120)nav.classList.add('hide');   /* bajando: ocultar */
+  else nav.classList.remove('hide');             /* subiendo o arriba: mostrar */
+  lastY=y;
+  var h=document.documentElement;
+  document.getElementById('pbar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* estrellas hero */
+(function(){
+  var cv=document.getElementById('stars'),cx=cv.getContext('2d'),P=[];
+  function nueva(){return {x:Math.random()*cv.width,y:Math.random()*cv.height,r:.6+Math.random()*1.8,o:.1+Math.random()*.5,v:.05+Math.random()*.22,w:Math.random()*6.28};}
+  function sz(){
+    var h=cv.parentElement;
+    cv.width=h.clientWidth||window.innerWidth;
+    cv.height=h.clientHeight||600;
+    var n=Math.round(cv.width*cv.height/14000);   /* densidad pareja en cualquier pantalla */
+    n=Math.max(60,Math.min(240,n));
+    P.length=0; for(var i=0;i<n;i++)P.push(nueva());
+  }
+  window.addEventListener('resize',sz);
+  window.addEventListener('load',sz);
+  sz();
+  (function loop(t){
+    cx.clearRect(0,0,cv.width,cv.height);
+    P.forEach(function(p){
+      p.y-=p.v; if(p.y<-4){p.y=cv.height+4;p.x=Math.random()*cv.width;}
+      var tw=p.o*(0.6+0.4*Math.sin((t||0)/900+p.w));
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.29);cx.fillStyle='rgba(160,200,255,'+tw+')';cx.fill();
+    });
+    requestAnimationFrame(loop);
+  })(0);
+})();
+
+/* marquee duplicado */
+var mt=document.getElementById('mtrack');mt.innerHTML+=mt.innerHTML;
+
+/* contadores */
+var ioN=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;ioN.unobserve(e.target);
+  var el=e.target,to=+el.dataset.ct,pre=el.dataset.pre||'',suf=el.dataset.suf||'',st=performance.now();
+  (function step(t){var p=Math.min(1,(t-st)/1200),k=1-Math.pow(1-p,3);
+    el.textContent=pre+Math.round(to*k)+suf;if(p<1)requestAnimationFrame(step);})(st);
+});},{threshold:.5});
+document.querySelectorAll('[data-ct]').forEach(function(el){ioN.observe(el);});
+
+/* simulador */
+var term=12,fmt=function(n){return '$'+n.toLocaleString('es-MX');};
+function setTerm(m){term=m;document.querySelectorAll('#terms .term').forEach(function(t){t.classList.toggle('on',+t.dataset.m===m);});calc();}
+function calc(){
+  var r=document.getElementById('ramt'),a=+r.value,pct=(a-5000)/550;
+  r.style.background='linear-gradient(90deg,var(--blue) '+pct+'%,var(--blue-soft) '+pct+'%)';
+  document.getElementById('oamt').textContent=fmt(a);
+  var rate=.045,c=Math.round(a*rate/(1-Math.pow(1+rate,-term)));
+  var inc=+document.getElementById('rinc').value||0;
+  document.getElementById('qcuota').textContent=fmt(c);
+  document.getElementById('qtotal').textContent=fmt(c*term);
+  document.getElementById('qplazo').textContent=term+' pagos fijos · sin sorpresas';
+  document.getElementById('qfree').textContent=fmt(Math.max(0,inc-c));
+  var el=document.getElementById('qratio'),ratio=inc>0?Math.round(c/inc*100):0;
+  if(inc<=0){el.textContent='Escribe tu ingreso para ver si te queda';}
+  else if(ratio<=30){el.textContent='Es el '+ratio+'% de tu ingreso · te queda holgado ✅';}
+  else if(ratio<=40){el.textContent='Es el '+ratio+'% de tu ingreso · va un poco ajustado ⚠️';}
+  else{el.textContent='Es el '+ratio+'% de tu ingreso · mejor baja el monto 🙏';}
+}
+calc();
+
+/* chat animado */
+var ioC=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;ioC.unobserve(e.target);
+  e.target.querySelectorAll('.bub').forEach(function(b){
+    setTimeout(function(){b.classList.add('show');},+b.dataset.d);
+    if(b.dataset.hide)setTimeout(function(){b.style.display='none';},+b.dataset.hide);
+  });
+});},{threshold:.35});
+var _cb=document.getElementById('chatbox');if(_cb)ioC.observe(_cb);
+
+/* FAQ */
+function fq(btn){
+  var q=btn.parentElement,a=q.querySelector('.a'),open=q.classList.contains('open');
+  document.querySelectorAll('.q.open').forEach(function(o){o.classList.remove('open');o.querySelector('.a').style.maxHeight=0;});
+  if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+}
+
+/* ═══════════ MOTOR FUNCIONAL: wizard + chatbot + embudo ═══════════ */
+var store={
+  get:function(k){try{return JSON.parse(localStorage.getItem('abr_'+k))}catch(e){return null}},
+  set:function(k,v){try{localStorage.setItem('abr_'+k,JSON.stringify(v))}catch(e){}}
+};
+var S={step:0,monto:25000,plazo:12,ingreso:0,data:{},docs:0,done:false,code:null,leadId:null,score:null};
+var ORDER=['nombre','monto','plazo','proposito','ingreso','ocupacion','oferta','email','celular','codigo','password','docs','buro','analisis','aprobado','done'];
+function fmt2(n){return '$'+Math.round(n).toLocaleString('es-MX');}
+function cuotaDe(a,m){var r=.045;return Math.round(a*r/(1-Math.pow(1+r,-m)));}
+function firstName(){return (S.data.nombre||'').trim().split(' ')[0]||'';}
+function wSave(){store.set('sol',S);}
+function pushLead(etapa){
+  try{
+    if(!S.data.nombre)return;
+    if(!S.leadId)S.leadId='L'+Date.now();
+    var L=store.get('leads')||[];
+    var c=cuotaDe(S.aprobado||S.monto,S.plazo);
+    var ix=-1;for(var i=0;i<L.length;i++)if(L[i].id===S.leadId){ix=i;break;}
+    var rec={id:S.leadId,nombre:S.data.nombre,email:S.data.email||'',celular:S.data.celular||'',
+      monto:S.monto,aprobado:S.aprobado||null,plazo:S.plazo,ingreso:S.ingreso||0,cuota:c,
+      proposito:S.data.proposito||'—',ocupacion:S.data.ocupacion||'—',score:S.score||null,
+      etapa:etapa,docs:S.docs||0,origen:'Sitio web',nuevo:true,notas:(ix>-1?L[ix].notas||'':''),
+      fecha:(ix>-1?L[ix].fecha:new Date().toISOString()),hist:(ix>-1?(L[ix].hist||[]):[])};
+    rec.hist.push({t:new Date().toISOString(),e:etapa});
+    if(ix>-1)L[ix]=rec;else L.unshift(rec);
+    store.set('leads',L);
+  }catch(e){}
+}
+
+/* ---- navegación ---- */
+function wShow(i){
+  S.step=i;wSave();
+  document.querySelectorAll('.wstep').forEach(function(s){s.classList.toggle('on',s.dataset.ws===ORDER[i]);});
+  document.getElementById('wprog').style.width=((i)/(ORDER.length-1)*100)+'%';
+  var id=ORDER[i];
+  if(id==='monto'&&firstName())document.getElementById('h_monto').textContent='Mucho gusto, '+firstName()+' 🤝 ¿Cuánto necesitas?';
+  if(id==='proposito'&&firstName())document.getElementById('h_prop').textContent=firstName()+', ¿para qué lo vas a usar?';
+  if(id==='oferta')wOffer();
+  if(id==='email'&&firstName())document.getElementById('h_email').textContent='Va perfecto, '+firstName()+'. ¿Cuál es tu correo?';
+  if(id==='codigo')setTimeout(sendSms,500);
+  if(id==='docs'&&firstName())document.getElementById('h_docs').textContent=firstName()+', sube tus documentos';
+  if(id==='analisis')runAnalysis();
+  if(id==='aprobado')fillApproved();
+  if(id==='done'){S.done=true;wSave();pushLead('Firmado · por depositar ✍️');navUser();document.getElementById('w_dnow').textContent='hoy · '+new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});}
+  var st=document.querySelector('.wstage');if(st)st.scrollTop=0;
+  var inp=document.querySelector('.wstep.on .winp');if(inp)setTimeout(function(){inp.focus();},350);
+}
+function wOpen(pre){
+  if(pre){S.monto=pre.monto||S.monto;S.plazo=pre.plazo||S.plazo;if(pre.ingreso)S.ingreso=pre.ingreso;}
+  document.getElementById('wiz').classList.add('open');
+  document.body.style.overflow='hidden';
+  var i=S.done?ORDER.indexOf('done'):Math.min(S.step,ORDER.indexOf('buro'));
+  if(ORDER[i]==='analisis')i=ORDER.indexOf('buro');
+  document.getElementById('f_monto').value=S.monto;wAmt(true);
+  if(S.data.nombre)document.getElementById('f_nombre').value=S.data.nombre;
+  if(S.ingreso)document.getElementById('f_ingreso').value=S.ingreso;
+  if(S.data.email)document.getElementById('f_email').value=S.data.email;
+  if(S.data.celular)document.getElementById('f_celular').value=S.data.celular;
+  wShow(i);
+}
+function wClose(){document.getElementById('wiz').classList.remove('open');document.body.style.overflow='';}
+function wBack(){if(S.step>0)wShow(S.step-1);}
+function err(id,msg){var e=document.getElementById('e_'+id);if(e)e.textContent=msg||'';}
+
+/* ---- validación y avance ---- */
+function wNext(){
+  var id=ORDER[S.step];
+  if(id==='nombre'){
+    var v=document.getElementById('f_nombre').value.trim();
+    if(v.length<5||v.split(' ').length<2)return err('nombre','Escribe tu nombre y al menos un apellido 🙏');
+    err('nombre');S.data.nombre=v;
+  }
+  if(id==='monto'){S.monto=+document.getElementById('f_monto').value;}
+  if(id==='proposito'&&!S.data.proposito)return err('proposito','Elige una opción para continuar');
+  if(id==='ingreso'){
+    var n=+document.getElementById('f_ingreso').value;
+    if(!n||n<3000)return err('ingreso','Escribe tu ingreso mensual (mínimo $3,000)');
+    err('ingreso');S.ingreso=n;
+  }
+  if(id==='ocupacion'&&!S.data.ocupacion)return err('ocupacion','Elige una opción para continuar');
+  if(id==='email'){
+    var v2=document.getElementById('f_email').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v2))return err('email','Ese correo no se ve completo 🤔 revísalo');
+    err('email');S.data.email=v2;
+  }
+  if(id==='celular'){
+    var tel=document.getElementById('f_celular').value.replace(/\D/g,'');
+    if(tel.length!==10)return err('celular','Son 10 dígitos — revisa tu número');
+    err('celular');S.data.celular=tel;
+  }
+  if(id==='codigo'){
+    var c=['c1','c2','c3','c4'].map(function(x){return document.getElementById(x).value;}).join('');
+    if(c!==S.code)return err('codigo','Ese código no coincide. Míralo en el mensaje de arriba ☝️');
+    err('codigo');
+  }
+  if(id==='password'){
+    var pw=document.getElementById('f_password').value;
+    if(pw.length<8)return err('password','Mínimo 8 caracteres para protegerte bien');
+    err('password');S.data.pw=true;pushLead('Cuenta creada 📝');
+  }
+  if(id==='docs'){
+    if(document.querySelectorAll('.wdoc.done').length<3)return err('docs','Sube los 3 documentos para continuar 📸');
+    err('docs');S.docs=3;pushLead('Documentos completos 📄');
+  }
+  if(id==='buro'){
+    if(!document.getElementById('w_cons').classList.contains('on'))return err('buro','Necesitamos tu autorización para poder evaluarte');
+    err('buro');pushLead('En análisis 🤖');
+  }
+  if(id==='aprobado'){
+    var f=document.getElementById('f_firma').value.trim();
+    if(f.length<5)return err('firma','Escribe tu nombre completo para firmar ✍️');
+    err('firma');S.data.firma=f;
+  }
+  wSave();wShow(S.step+1);
+}
+function wPick(el,key){
+  el.parentElement.querySelectorAll('.wchip').forEach(function(c){c.classList.remove('on');});
+  el.classList.add('on');err(key);
+  if(key==='plazo'){S.plazo=+el.dataset.v;}else{S.data[key]=el.dataset.v;}
+  wSave();setTimeout(function(){if(ORDER[S.step]===key||key==='plazo'&&ORDER[S.step]==='plazo')wNext();},380);
+}
+function wAmt(silent){
+  var r=document.getElementById('f_monto'),a=+r.value,pct=(a-5000)/550;
+  r.style.background='linear-gradient(90deg,#3AE7CF '+pct+'%,rgba(255,255,255,.12) '+pct+'%)';
+  document.getElementById('w_amt').textContent=fmt2(a);S.monto=a;
+  var l=document.getElementById('w_amtlive');
+  if(a<=10000)l.textContent='Ideal para empezar y subir tu línea rápido 🌱';
+  else if(a<=30000)l.textContent='Buena elección 👌 el rango más solicitado';
+  else if(a<=45000)l.textContent='Vas por algo grande 💪';
+  else l.textContent='El máximo — para proyectos serios 🚀';
+}
+function wOffer(){
+  var c=cuotaDe(S.monto,S.plazo);
+  document.getElementById('w_cuota').textContent=fmt2(c);
+  document.getElementById('w_omonto').textContent=fmt2(S.monto);
+  document.getElementById('w_oplazo').textContent=S.plazo+' meses';
+  document.getElementById('w_ototal').textContent=fmt2(c*S.plazo);
+  var ratio=S.ingreso>0?Math.round(c/S.ingreso*100):0,el=document.getElementById('w_ratio');
+  if(ratio<=30)el.textContent='Es el '+ratio+'% de tu ingreso · te queda holgado ✅';
+  else if(ratio<=40)el.textContent='Es el '+ratio+'% de tu ingreso · va un poco ajustado ⚠️';
+  else el.textContent='Es el '+ratio+'% de tu ingreso · la IA podría ajustar tu oferta 🤖';
+}
+/* ingreso live */
+document.getElementById('f_ingreso').addEventListener('input',function(){
+  var n=+this.value,c=cuotaDe(S.monto,S.plazo),l=document.getElementById('w_inclive');
+  if(!n){l.textContent='';return;}
+  var r=Math.round(c/n*100);
+  l.textContent=r<=30?'Tu pago sería el '+r+'% de tu ingreso · vas muy bien ✅':(r<=40?'Sería el '+r+'% de tu ingreso · aceptable ⚠️':'Sería el '+r+'% — la IA ajustará tu oferta para cuidarte 💙');
+});
+/* password live */
+document.getElementById('f_password').addEventListener('input',function(){
+  var v=this.value,l=document.getElementById('w_pwlive'),s=0;
+  if(v.length>=8)s++;if(/[A-ZÁ-Ú]/.test(v))s++;if(/\d/.test(v))s++;if(/[^\w\s]/.test(v))s++;
+  l.textContent=v.length===0?'':(s<=1?'Fuerza: débil 😬':(s===2?'Fuerza: aceptable 🙂':(s===3?'Fuerza: buena 💪':'Fuerza: ¡de acero! 🛡️')));
+});
+/* Enter avanza */
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  if(!document.getElementById('wiz').classList.contains('open'))return;
+  if(ORDER[S.step]==='analisis')return;
+  e.preventDefault();wNext();
+});
+/* código SMS simulado */
+function sendSms(){
+  S.code=''+(Math.floor(1000+Math.random()*9000));wSave();
+  document.getElementById('smscode').textContent=S.code;
+  var t=document.getElementById('smstoast');t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},7000);
+}
+['c1','c2','c3','c4'].forEach(function(id,ix,arr){
+  var el=document.getElementById(id);
+  el.addEventListener('input',function(){
+    this.value=this.value.replace(/\D/g,'');
+    if(this.value&&ix<3)document.getElementById(arr[ix+1]).focus();
+  });
+  el.addEventListener('keydown',function(e){if(e.key==='Backspace'&&!this.value&&ix>0)document.getElementById(arr[ix-1]).focus();});
+});
+/* documentos simulados */
+function wDoc(el){
+  if(el.classList.contains('up'))return;
+  var inp=document.createElement('input');inp.type='file';inp.accept='image/*,application/pdf';
+  inp.onchange=function(){var f=inp.files[0];if(!f)return;
+    el.classList.add('up');el.querySelector('.dst').textContent='Subiendo…';
+    setTimeout(function(){var i=el.querySelector('.dbar i');if(i)i.style.width='100%';},60);
+    wStoreDoc(el.getAttribute('data-k')||('doc'+Date.now()),f,el);};
+  inp.click();
+}
+function wCompress(file,cb){var r=new FileReader();r.onload=function(){var img=new Image();img.onload=function(){var mx=1100,s=Math.min(1,mx/Math.max(img.width,img.height));var c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',0.72));};img.onerror=function(){cb(r.result);};img.src=r.result;};r.readAsDataURL(file);}
+function wStoreDoc(k,file,el){
+  var fin=function(url){
+    if(url.length>2400000){el.classList.remove('up');el.querySelector('.dst').textContent='Subir';el.querySelector('.dm span').textContent='Archivo muy pesado, usa uno más ligero 📸';return;}
+    S.leadId=S.leadId||('L'+Date.now());
+    var a=store.get('docfiles')||{};a[S.leadId]=a[S.leadId]||{};
+    a[S.leadId][k]={name:file.name,type:file.type||'image/jpeg',url:url,ts:Date.now(),verified:false};
+    store.set('docfiles',a);
+    el.classList.remove('up');el.classList.add('done');
+    el.querySelector('.dst').textContent='✓ Listo';
+    el.querySelector('.dm span').textContent='Recibido · '+(file.name.length>20?file.name.slice(0,18)+'…':file.name);
+    if(/^image\//.test(file.type)){var di=el.querySelector('.di');if(di){di.style.backgroundImage='url('+url+')';di.style.backgroundSize='cover';di.style.backgroundPosition='center';di.textContent='';}}
+  };
+  if(/^image\//.test(file.type))wCompress(file,fin);else{var r=new FileReader();r.onload=function(){fin(r.result);};r.readAsDataURL(file);}
+}
+/* análisis IA */
+function runAnalysis(){
+  if(firstName())document.getElementById('h_ana').textContent='Analizando tu solicitud, '+firstName()+'…';
+  var ids=['a1','a2','a3','a4','a5'],t=0;
+  ids.forEach(function(id){document.getElementById(id).classList.remove('act','ok');});
+  ids.forEach(function(id,ix){
+    t+=200;setTimeout(function(){document.getElementById(id).classList.add('act');},t);
+    t+=900+ix*280;setTimeout(function(){var e=document.getElementById(id);e.classList.remove('act');e.classList.add('ok');},t);
+  });
+  setTimeout(function(){wShow(ORDER.indexOf('aprobado'));},t+700);
+}
+/* oferta final (cerebro: ajusta si no alcanza) */
+function fillApproved(){
+  var c=cuotaDe(S.monto,S.plazo),ap=S.monto,adj=false;
+  if(S.ingreso>0&&c>S.ingreso*.4){
+    ap=5000;for(var a=S.monto;a>=5000;a-=1000){if(cuotaDe(a,S.plazo)<=S.ingreso*.35){ap=a;break;}}
+    adj=true;c=cuotaDe(ap,S.plazo);
+  }
+  S.aprobado=ap;S.score=Math.max(580,Math.min(850,640+Math.round((1-c/Math.max(S.ingreso,1))*180)));wSave();pushLead(adj?'Pre-aprobado (ajustado) ✅':'Pre-aprobado ✅');
+  document.getElementById('h_apr').textContent=firstName()?('¡Felicidades, '+firstName()+'! Estás pre-aprobado'):'¡Felicidades! Estás pre-aprobado';
+  document.getElementById('w_amonto').textContent=fmt2(ap);
+  document.getElementById('w_adet').textContent=S.plazo+' pagos de '+fmt2(c)+' · CAT 45.9% informativo';
+  document.getElementById('w_aprmsg').textContent=adj?'Para cuidar tu bolsillo, nuestra IA ajustó tu oferta a un monto que te queda cómodo. Al pagar puntual, tu línea crecerá 💙':'Tu solicitud pasó la evaluación inicial. Esta es tu oferta:';
+  wConfetti();
+}
+function wConfetti(){
+  var host=document.getElementById('wiz'),col=['#3AE7CF','#3B6EF6','#4338CA','#34E0B0','#22D3EE','#fff'];
+  for(var i=0;i<48;i++){
+    var c=document.createElement('div');
+    c.style.cssText='position:absolute;top:-16px;width:9px;height:14px;border-radius:2px;z-index:50;pointer-events:none;left:'+(Math.random()*100)+'%;background:'+col[i%6]+';transform:rotate('+(Math.random()*360)+'deg);animation:fall2 '+(1.8+Math.random()*1.6)+'s '+(Math.random()*.6)+'s ease-in forwards';
+    host.appendChild(c);(function(el){setTimeout(function(){el.remove();},4500);})(c);
+  }
+}
+var stl=document.createElement('style');stl.textContent='@keyframes fall2{to{top:105%;transform:translateX(30px) rotate(620deg);opacity:.15}}';document.head.appendChild(stl);
+/* navbar refleja sesión */
+function navUser(){
+  var a=document.querySelector('.ncta');if(!a)return;
+  if(S.done){a.textContent='📋 Mi solicitud';}
+  else if(S.data.nombre){a.textContent='Continuar mi solicitud';}
+}
+navUser();
+function startFromSim(){
+  wOpen({monto:+document.getElementById('ramt').value,plazo:term,ingreso:+document.getElementById('rinc').value||0});
+  return false;
+}
+
+/* ═══════════ CHATBOT: Avivcito ═══════════ */
+var chatOpen=false,greeted=false;
+function chatToggle(){
+  chatOpen=!chatOpen;
+  document.getElementById('chatp').classList.toggle('open',chatOpen);
+  document.getElementById('fbtnic').innerHTML=chatOpen?'▾':'<img src="avivcito.png" alt="Avivcito">';
+  document.getElementById('flabel').classList.remove('show');
+  if(chatOpen&&!greeted){greeted=true;setTimeout(botGreet,450);}
+  if(chatOpen)setTimeout(function(){document.getElementById('cinp').focus();},400);
+}
+setTimeout(function(){if(!chatOpen)document.getElementById('flabel').classList.add('show');},5000);
+setTimeout(function(){document.getElementById('flabel').classList.remove('show');},16000);
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function addMsg(html,who){
+  var d=document.createElement('div');d.className='cm '+who;d.innerHTML=html;
+  document.getElementById('clog').appendChild(d);scrollLog();return d;
+}
+function addChips(list){
+  var w=document.createElement('div');w.className='cbtns';
+  list.forEach(function(ch){
+    var b=document.createElement('button');b.className='cqk'+(ch.go?' go':'');b.textContent=ch.t;
+    b.onclick=function(){
+      if(ch.go){chatToggle();setTimeout(function(){wOpen();},250);}
+      else{userSay(ch.t);}
+    };
+    w.appendChild(b);
+  });
+  document.getElementById('clog').appendChild(w);scrollLog();
+}
+function scrollLog(){var l=document.getElementById('clog');l.scrollTop=l.scrollHeight;}
+function typing(on){
+  var ex=document.getElementById('ctyp');
+  if(on&&!ex){var d=document.createElement('div');d.id='ctyp';d.className='ctyping';d.innerHTML='<i></i><i></i><i></i>';document.getElementById('clog').appendChild(d);scrollLog();}
+  if(!on&&ex)ex.remove();
+}
+function botSay(html,chips,delay){
+  typing(true);
+  setTimeout(function(){typing(false);addMsg(html,'bot');if(chips)addChips(chips);},delay||700+Math.min(1200,html.length*6));
+}
+function userSay(t){addMsg(esc(t),'usr');think(t);}
+function chatSend(){
+  var i=document.getElementById('cinp'),v=i.value.trim();
+  if(!v)return;i.value='';userSay(v);
+}
+document.getElementById('cinp').addEventListener('keydown',function(e){if(e.key==='Enter')chatSend();});
+
+var CH_GO={t:'Quiero mi crédito 🚀',go:true};
+var CH_REQ={t:'¿Cuáles son los requisitos?'};
+var CH_MON={t:'¿Cuánto me prestan?'};
+var CH_SIM={t:'Simular mi pago 📊'};
+var CH_PAGO={t:'¿Cómo pago?'};
+var CH_HUM={t:'Hablar con una persona 🙋'};
+function botGreet(){
+  var n=firstName();
+  botSay('¡Hola'+(n?' <b>'+esc(n)+'</b>':'')+'! 👋 Soy <b>Avivcito</b>, tu asistente Aviv con IA.\nEstoy aquí <b>24/7</b> para resolver lo que necesites — crédito, pagos, tu cuenta o cualquier duda. Y si algo requiere una persona, te conecto al instante. 💙',
+    S.done?[{t:'¿Cómo va mi solicitud?'},CH_PAGO,CH_HUM]:[CH_GO,CH_MON,CH_HUM]);
+}
+
+/* --- cerebro --- */
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+function has(t,arr){return arr.some(function(k){return t.indexOf(k)>-1;});}
+function parseAmt(t){
+  var m=t.match(/(\d{1,3}(?:[.,]\d{3})+|\d{4,6})/);
+  if(m)return parseInt(m[1].replace(/[.,]/g,''),10);
+  m=t.match(/(\d{1,2})\s*mil/);if(m)return +m[1]*1000;
+  return null;
+}
+function think(raw){
+  var t=norm(raw),n=firstName();
+  var amt=parseAmt(t),pz=(t.match(/\b(6|12|18|24)\s*mes/)||[])[1];
+  /* ═══ CEREBRO AVIV · atención de lujo ═══ */
+  /* fraude / cargo no reconocido — PRIORIDAD */
+  if(has(t,['fraude','cargo no','no reconozco','no reconosco','me cobraron de mas','clonaron','me clonaron','me robaron','robo de identidad','suplantacion','hackearon','uso no autorizado','movimiento extrano','cargo extrano','no hice ese']))
+    return botSay('Estoy contigo y esto es prioridad 🔒 Tu seguridad va primero.\nPara <b>proteger tu cuenta ahora mismo</b>, escríbenos a <b>hola@aviv.mx</b> con el asunto "URGENTE" o por WhatsApp — bloqueamos y revisamos el movimiento de inmediato.\nRecuerda: <b>Aviv nunca</b> te pedirá tu contraseña o tu código por mensaje. 💙',[CH_HUM]);
+  /* dificultad para pagar — empatía primero */
+  if(has(t,['no puedo pagar','no me alcanza','se me complico','perdi mi trabajo','me quede sin trabajo','plan de pago','plan de pagos','reestructurar','no tengo para pagar','se me junto','ando corto','se me dificulta']))
+    return botSay('Gracias por contarme, y tranquilo(a) — <b>estamos de tu lado</b> 💙\nLo mejor es avisarnos a tiempo: tenemos opciones <b>antes</b> de que se generen cargos — mover tu fecha, un plan a tu medida o una pausa. Escríbenos a <b>hola@aviv.mx</b> o por WhatsApp y lo resolvemos juntos.',[CH_HUM]);
+  /* adelantar / liquidar */
+  if(has(t,['adelantar','adelanto','abonar a capital','abono a capital','liquidar','liquidacion','pagar antes','pago anticipado','saldar','terminar antes','pagar de mas'])){
+    if(amt)return botSay('¡Gran decisión! 👏 Si abonas <b>'+fmt2(amt)+'</b> directo a capital, bajas intereses y acortas tu plazo — y en Aviv <b>no hay penalización</b> por pagar antes.\nEl cálculo exacto de tu ahorro te aparece en tu portal al confirmar.',[CH_PAGO,CH_HUM]);
+    return botSay('En Aviv puedes <b>adelantar o liquidar cuando quieras, sin penalización</b> 🙌 Cada abono a capital te ahorra intereses.\nDime cuánto quieres adelantar (ej. "adelanto 2 mil") y te digo el impacto.',[CH_PAGO]);
+  }
+  /* cambiar fecha de pago */
+  if(has(t,['cambiar fecha','mover fecha','otra fecha','cambiar mi fecha','fecha de pago','dia de pago','recorrer el pago','ajustar mi pago']))
+    return botSay('Claro que sí 🗓️ Ajustamos tu fecha de pago para que caiga cuando te llega tu ingreso.\nDime qué día te acomoda y lo gestionamos, o escríbenos a <b>hola@aviv.mx</b> y lo dejamos listo.',[CH_HUM]);
+  /* ampliar linea / segundo credito */
+  if(has(t,['ampliar','aumentar mi linea','subir mi linea','mas credito','otro credito','segundo credito','credito adicional','me prestan mas','subir mi limite']))
+    return botSay('¡Vas creciendo! 📈 Tu línea Aviv sube sola cada vez que pagas puntual — así es "crecemos contigo".\nSi vas al corriente, revisa tu portal para ver tu nueva línea, o te ayudo a solicitar el aumento.',[CH_GO,CH_HUM]);
+  /* actualizar datos */
+  if(has(t,['actualizar mis datos','cambiar mi correo','cambiar mi telefono','cambiar numero','cambiar mis datos','actualizar datos','nuevo telefono','nuevo correo','cambiar mi numero']))
+    return botSay('Con gusto ✏️ Por tu seguridad, los cambios de correo o teléfono los confirmamos contigo.\nEscríbenos desde tu correo registrado a <b>hola@aviv.mx</b> y lo actualizamos en cuanto lo confirmemos contigo.',[CH_HUM]);
+  /* cancelar / baja */
+  if(has(t,['cancelar','dar de baja','darme de baja','eliminar mi cuenta','borrar mis datos','quiero cancelar'])){
+    if(S.done||S.data.nombre)return botSay('Entiendo, y lo vemos sin presión 🙏\nSi tienes un crédito activo lo revisamos juntos; si es tu cuenta o tus datos, gestionamos la baja conforme al aviso de privacidad. Escríbenos a <b>hola@aviv.mx</b>.',[CH_HUM]);
+    return botSay('Sin problema 🙏 No tienes ninguna obligación con nosotros.\nSi quieres eliminar tus datos, escríbenos a <b>hola@aviv.mx</b> y lo hacemos conforme al aviso de privacidad. Aquí seguiremos cuando nos necesites. 💙',[CH_HUM]);
+  }
+  /* queja / mal servicio */
+  if(has(t,['queja','reclamo','mal servicio','pesimo','muy molesto','estoy enojado','inconforme','me trataron mal','estoy furioso','no sirve nada','decepcionado','pesima atencion']))
+    return botSay('Lamento de verdad la experiencia 🙏 Esperas un trato de primera y con razón — quiero resolverlo.\nCuéntame qué pasó y lo <b>escalo de inmediato</b> con una persona del equipo (<b>hola@aviv.mx</b>). Tu caso importa. 💙',[CH_HUM]);
+  /* comprobante / estado de cuenta */
+  if(has(t,['comprobante de pago','estado de cuenta','mi recibo','constancia','comprobante de mi','mis pagos']))
+    return botSay('Claro 📄 Tus comprobantes y tu estado de cuenta están en tu portal Aviv, en la sección de pagos.\n¿No lo ves? Escríbenos a <b>hola@aviv.mx</b> y te lo enviamos enseguida.',[CH_HUM]);
+  /* elegibilidad */
+  if(has(t,['puedo aplicar','soy elegible','requisitos de edad','cuantos anos','tengo 18','extranjero','sin empleo','desempleado','estudiante','ama de casa','soy independiente','negocio propio','trabajo por mi cuenta']))
+    return botSay('Para solicitar necesitas ser <b>mayor de edad</b>, vivir en México 🇲🇽 y comprobar ingresos — empleado, independiente o con negocio propio, todos cuentan.\nEl <b>Aviv Score</b> te evalúa por tu situación real de hoy, no solo por tu historial. ¡Simúlalo sin compromiso!',[CH_SIM,CH_REQ]);
+  /* horario de atencion */
+  if(has(t,['horario','a que hora','atienden','estan abiertos','dias de atencion','cuando atienden','hasta que hora']))
+    return botSay('Yo te atiendo <b>24/7</b> 🤖⚡ y nuestro equipo humano responde <b>todos los días</b> por <b>hola@aviv.mx</b>, normalmente el mismo día.',[CH_HUM,CH_GO]);
+  /* sucursales */
+  if(has(t,['sucursal','oficina','donde estan','ubicacion','direccion','sus oficinas','presencial','en persona']))
+    return botSay('Somos <b>100% digitales</b> 📲 — sin filas ni sucursales. Todo lo haces en línea en minutos, desde donde estés en México. 🇲🇽',[CH_GO,CH_SIM]);
+  /* idioma */
+  if(has(t,['english','do you speak','in english','habla ingles','speak english']))
+    return botSay('Hi! For now I chat mainly in Spanish, but here I am 💙 I\'m <b>Avivcito</b>, Aviv\'s AI assistant — ask me about amounts, requirements or payments, o seguimos en español.',[CH_MON,CH_GO]);
+  /* saludos */
+  if(has(t,['hola','buenas','buenos dias','buenas tardes','que tal','hey'])&&t.length<26)
+    return botSay('¡Hola'+(n?' '+esc(n):'')+'! 😄 ¿En qué te ayudo? Puedo decirte requisitos, montos, o llevarte directo a tu solicitud.',[CH_GO,CH_REQ]);
+  if(has(t,['gracias','perfecto','excelente','genial']))
+    return botSay('¡Con gusto! 🙌 Para eso estoy. Si quieres, arrancamos tu solicitud — toma menos de 5 minutos.',[CH_GO]);
+  if(has(t,['adios','bye','hasta luego','nos vemos']))
+    return botSay('¡Hasta pronto'+(n?' '+esc(n):'')+'! 💙 Aquí estaré 24/7 cuando decidas dar el paso.');
+  /* estatus */
+  if(has(t,['mi solicitud','como va','estatus','status','ya me aprobaron'])){
+    if(S.done)return botSay('¡Va muy bien! ✅ Tu solicitud está <b>firmada y en validación final</b> por '+fmt2(S.aprobado||S.monto)+'.\nTe avisaremos por correo — normalmente en menos de 24 horas. 📬');
+    if(S.data.nombre)return botSay('Tienes una solicitud <b>a medio camino</b> 👀 Guardé todo tu avance, la retomas justo donde ibas.',[{t:'Continuar mi solicitud 🚀',go:true}]);
+    return botSay('Aún no tienes una solicitud… ¡pero eso se arregla en 5 minutos! 😉',[CH_GO]);
+  }
+  /* monto pedido con número */
+  if(amt&&(has(t,['prest','quiero','necesito','credito','pedir','me dan','solicitar'])||t.replace(/[^a-z]/g,'').length<12)){
+    if(amt<5000)return botSay('Nuestro monto mínimo es de <b>$5,000</b> 🙏 ¿Te simulo ese?',[{t:'Simula $5,000'},CH_GO]);
+    if(amt>60000)return botSay('Por ahora el máximo es <b>$60,000</b> — y pagando puntual, tu línea crece rápido. 📈\nCon $60,000 a 12 meses pagarías '+fmt2(cuotaDe(60000,12))+'/mes.',[CH_GO]);
+    var m2=pz?+pz:12,c2=cuotaDe(amt,m2);
+    return botSay('¡Va! Con <b>'+fmt2(amt)+'</b> a <b>'+m2+' meses</b> pagarías aprox. <b>'+fmt2(c2)+' al mes</b> 💸 (pagos fijos, CAT prom. 45.9% informativo).\n¿Lo hacemos realidad?',[CH_GO,{t:'¿Y a 24 meses?'}]);
+  }
+  if(has(t,['24 meses','a 24'])&&!amt)
+    return botSay('A <b>24 meses</b>, '+fmt2(S.monto)+' te queda en <b>'+fmt2(cuotaDe(S.monto,24))+'/mes</b> — el pago más ligerito. 🪶',[CH_GO]);
+  /* requisitos */
+  if(has(t,['requisito','documento','necesito para','papele','que piden','ine','ife','comprobante']))
+    return botSay('Solo necesitas 3 cosas: 📋\n🪪 <b>INE vigente</b> (frente y reverso)\n💵 <b>Comprobante de ingresos</b> (nómina o estado de cuenta)\n🤳 <b>Una selfie</b> para confirmar que eres tú\n\nTodo se sube aquí mismo, sin ir a ningún lado.',[CH_GO,CH_MON]);
+  /* montos y plazos */
+  if(has(t,['cuanto me prestan','cuanto prestan','monto','maximo','minimo','hasta cuanto']))
+    return botSay('Prestamos de <b>$5,000 hasta $60,000</b> 💰 a plazos de <b>6 a 24 meses</b>.\nEmpiezas con un monto inicial y tu línea crece cada vez que pagas puntual. 📈\nDime una cantidad (ej. "quiero 20 mil") y te digo tu pago al instante.',[{t:'Quiero 20 mil'},CH_GO]);
+  if(has(t,['plazo','meses','cuanto tiempo para pagar']))
+    return botSay('Puedes pagar a <b>6, 12, 18 o 24 meses</b> — tú eliges. 🗓️\nMás meses = pago más pequeño. En el simulador lo ves al instante.',[{t:'Quiero 15 mil'},CH_GO]);
+  /* velocidad */
+  if(has(t,['cuanto tarda','rapido','tiempo','en cuanto','deposito','cuando me llega','hoy mismo']))
+    return botSay('⚡ Te respondemos en <b>menos de 24 horas</b>, y si te aprueban, el depósito llega el <b>mismo día</b> a tu cuenta.\nNada de "vuelva la próxima semana".',[CH_GO]);
+  /* buró */
+  if(has(t,['buro','historial','sin historial','estoy en buro','me rechazaron']))
+    return botSay('Sí consultamos Buró (requisito legal, con tu permiso 🔏), <b>pero no es lo único</b> que vemos.\nEl <b>Aviv Score</b> también valora tus ingresos y tu situación real de hoy. Estar en Buró o no tener historial <b>no te descarta automáticamente</b>. 💙',[CH_GO,CH_REQ]);
+  /* cat / tasa / costo */
+  if(has(t,['cat','tasa','interes','costo','comision','cuanto cobran']))
+    return botSay('Nuestro <b>CAT promedio es 45.9%</b> sin IVA (informativo) 🧾\nLo importante: tu pago mensual y tu total son <b>fijos y visibles desde antes de firmar</b>. Cero sorpresas, cero letras chiquitas.',[{t:'Quiero 10 mil'},CH_GO]);
+  /* seguridad */
+  if(has(t,['seguro','confiable','fraude','datos','privacidad','estafa']))
+    return botSay('Tu seguridad es primero 🔒\n• Datos <b>cifrados de extremo a extremo</b>\n• Nunca vendemos tu información\n• Verificación de identidad con IA antifraude\nSomos una financiera mexicana 🇲🇽 y solo pedimos datos en la plataforma oficial de Aviv.',[CH_REQ,CH_GO]);
+  /* pagos */
+  if(has(t,['como pago','donde pago','formas de pago','spei','oxxo','transferencia']))
+    return botSay('Pagas en línea 📲 desde tu portal Aviv con <b>transferencia SPEI</b> o tarjeta de débito.\nTe recordamos antes de cada fecha para que nunca se te pase, y cada pago puntual <b>sube tu Aviv Score</b>. 📈');
+  /* atraso */
+  if(has(t,['atraso','no puedo pagar','me atrase','mora','se me paso']))
+    return botSay('Tranquilo(a) 💙 lo primero es avisarnos.\nSiempre hay opciones antes de generar cargos: mover tu fecha de pago o armar un plan. Escríbenos aquí o a <b>hola@aviv.mx</b> — preferimos ayudarte a que te pongas al corriente.');
+  /* humano */
+  if(has(t,['humano','persona','asesor','telefono','whatsapp','contacto','hablar con alguien']))
+    return botSay('¡Claro! Nuestro equipo humano te atiende en <b>hola@aviv.mx</b> 📬 o por WhatsApp.\nMientras tanto yo puedo resolver casi todo — y llevarte directo a tu solicitud. 😉',[CH_GO]);
+  /* quién eres */
+  if(has(t,['quien eres','que eres','eres un robot','eres humano','abraham']))
+    return botSay('Soy <b>Avivcito</b> 🤖, el asistente con inteligencia artificial de Aviv — una financiera mexicana 🇲🇽 cuyo lema es <b>"Crecemos contigo"</b>.\nMi trabajo: que consigas tu crédito sin filas, sin papeleo y sin letras chiquitas.',[CH_MON,CH_GO]);
+  /* registro */
+  if(has(t,['registr','crear cuenta','solicitar','empezar','comenzar','quiero mi credito','aplicar','tramitar']))
+    return botSay('¡Esa es la actitud! 🚀 Te llevo al formulario — son <b>menos de 5 minutos</b> y vas guardando tu avance.',[{t:'Iniciar mi solicitud ✨',go:true}]);
+  /* fallback inteligente */
+  return botSay('¡Buena pregunta! 🤔 Esa me la anoto para el equipo humano (<b>hola@aviv.mx</b>).\nLo que sí te puedo resolver ya: requisitos, montos, plazos, costos… o de una vez tu solicitud. 😉',[CH_REQ,CH_MON,CH_GO]);
+}
+</script>
+<script>
+/* carrusel de opiniones: avanza solo a la derecha */
+(function(){
+  const t=document.getElementById('ttrack'); if(!t)return;
+  const step=()=> (t.querySelector('.tc')?.offsetWidth||360)+18;
+  window.tScroll=d=>{auto=false;t.scrollBy({left:d*step(),behavior:'smooth'})};
+  let auto=true;
+  ['pointerdown','wheel','touchstart'].forEach(e=>t.addEventListener(e,()=>auto=false,{passive:true}));
+  setInterval(()=>{
+    if(!auto||document.hidden)return;
+    if(t.scrollLeft+t.clientWidth>=t.scrollWidth-8) t.scrollTo({left:0,behavior:'smooth'});
+    else t.scrollBy({left:step(),behavior:'smooth'});
+  },3200);
+})();
+</script>
+</body>
+</html>
